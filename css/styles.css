@@ -19,8 +19,8 @@ body {
 }
 
 #controls {
-	overflow: hidden;
-	height: 5%;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 #placesList {

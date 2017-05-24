@@ -30,3 +30,5 @@ markers on the right for more information.
 	5/24/2017:
 		* Modified closeclick listener so selectedMural would be set to null, 
 			unhighlighting mural on the list
+		* Modified #controls ID in styles.css so it isn't obscured by the list
+			and gave it a bit of padding
