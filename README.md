@@ -23,3 +23,10 @@ markers on the right for more information.
 	*css/styles.css: CSS styling
 	*index.html: The HTML page the application is rendered on
 	*README.md: this readme file
+
+#List of Changes
+----------------
+
+	5/24/2017:
+		* Modified closeclick listener so selectedMural would be set to null, 
+			unhighlighting mural on the list

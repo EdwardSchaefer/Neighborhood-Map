@@ -41,9 +41,7 @@ $.ajax({
         markers.push(marker);
     }
 //If the data isn't retrieved from the server, send the error message to the KO observable
-}).fail(function() {
-    viewModel.ajaxFail('Failed to retrieve data via API')
-})
+});
 
 //Model for Knockout
 var Model = {
@@ -98,9 +96,10 @@ function populateInfoWindow(marker, infowindow) {
                 'Year: ' + marker.year + '</div>');
 //Open the InfoWindow
         infowindow.open(map, marker);
-//Make sure the marker property is cleared if the InfoWindow is closed.
+//Make sure the marker property is cleared if the InfoWindow is closed and list item unhighlighted
         infowindow.addListener('closeclick', function() {
             infowindow.marker = null;
+            viewModel.selectedMural(null);
         });
 //Changes marker's icon from default
         marker.setIcon('http://maps.google.com/mapfiles/ms/icons/purple-dot.png');
