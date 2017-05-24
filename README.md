@@ -37,3 +37,5 @@ markers on the right for more information.
 		*Removed outdated "type" attribute from link to styles.css
 		*Added and removed semicolons where appropriate
 		*Changed indentation to make code more readable, mostly to comments
+		*Changed order of scripts so Google Maps API loads last and moved the 
+			AJAX call inside initMap() function to match the success callback 

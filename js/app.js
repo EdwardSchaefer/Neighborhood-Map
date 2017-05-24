@@ -4,47 +4,6 @@ var map;
 //Create placemarkers array to use in multiple functions to have control over the number of places that show.
 var markers = [];
 
-//Define parameters for retrieving data from Open Baltimore/Socrata Open Data API
-$.ajax({
-    url: "https://data.baltimorecity.gov/resource/x3eq-9sua.json",
-    type: "GET",
-    data: {
-        "$limit" : 5000,
-        "$$app_token" : "IAPCDodkEyfP95b6c7eJLut59"
-    }
-    //Prepare the data for Google Maps API and Knockout 
-}).done(function(data) {
-    //Define the prototype for the Google Maps InfoWindow object 
-    var largeInfoWindow = new google.maps.InfoWindow();
-    for(var i = 0; i < data.length; i++) {
-        //Add a unique ID for each object in the array
-        data[i].id = i;
-        //Create a new marker object and add the data to it
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(data[i].location_1.coordinates[1], data[i].location_1.coordinates[0]),
-            firstname: data[i].artistfirstname,
-            lastname: data[i].artistlastname,
-            address: data[i].location,
-            zip: data[i].location_1_zip,
-            year: data[i].year,
-            id: i,
-            icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-            map: map
-        });
-        //Add an event listener (google API) that displays the infowindow
-        marker.addListener('click', function(){
-            populateInfoWindow(this, largeInfoWindow);
-        });
-        //Add location to array for KO list
-        viewModel.locations.push(data[i]);
-        //Add marker to the global markers object
-        markers.push(marker);
-    }
-    //If the data isn't retrieved from the server, send the error message to the KO observable
-}).fail(function() {
-    viewModel.ajaxFail('Failed to retrieve data via API');
-});
-
 //Model for Knockout
 var Model = {
 
@@ -82,6 +41,46 @@ function selectMural(mural) {
 
 //Initialize the map for Google Maps API
 function initMap() {
+    //Define parameters for retrieving data from Open Baltimore/Socrata Open Data API
+    $.ajax({
+        url: "https://data.baltimorecity.gov/resource/x3eq-9sua.json",
+        type: "GET",
+        data: {
+            "$limit" : 5000,
+            "$$app_token" : "IAPCDodkEyfP95b6c7eJLut59"
+        }
+        //Prepare the data for Google Maps API and Knockout 
+    }).done(function(data) {
+        //Define the prototype for the Google Maps InfoWindow object 
+        var largeInfoWindow = new google.maps.InfoWindow();
+        for(var i = 0; i < data.length; i++) {
+            //Add a unique ID for each object in the array
+            data[i].id = i;
+            //Create a new marker object and add the data to it
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(data[i].location_1.coordinates[1], data[i].location_1.coordinates[0]),
+                firstname: data[i].artistfirstname,
+                lastname: data[i].artistlastname,
+                address: data[i].location,
+                zip: data[i].location_1_zip,
+                year: data[i].year,
+                id: i,
+                icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+                map: map
+            });
+            //Add an event listener (google API) that displays the infowindow
+            marker.addListener('click', function(){
+                populateInfoWindow(this, largeInfoWindow);
+            });
+            //Add location to array for KO list
+            viewModel.locations.push(data[i]);
+            //Add marker to the global markers object
+            markers.push(marker);
+        }
+        //If the data isn't retrieved from the server, send the error message to the KO observable
+    }).fail(function() {
+        viewModel.ajaxFail('Failed to retrieve data via API');
+    });
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 39.310000, lng: -76.610000},
         zoom: 13
