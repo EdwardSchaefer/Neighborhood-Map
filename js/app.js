@@ -68,7 +68,7 @@ var AppViewModel = function() {
 //The ID of the mural in question, uesd so the clicked list mural matches the clicked marker and vice versa
     self.selectedMural = ko.observable();
 //Message to display if AJAX call fails
-    self.ajaxFail = ko.observable('')
+    self.ajaxFail = ko.observable('');
 };
 
 //Apply bindings to view
@@ -115,12 +115,12 @@ function markerUpdate() {
     //Loops through the markers and hides them
     for (var i = 0; i < markers.length; i++) {
         markers[i].setMap(null);
-    };
+    }
     //Gets the length of search results
     length = viewModel.filtered().length;
     //Loops through the markers and redisplay them based on IDs from search results
     for (i = 0; i < length; i++) {
         x = viewModel.filtered()[i].id;
         markers[x].setMap(map);
-    };
+    }
 }
