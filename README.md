@@ -38,4 +38,6 @@ markers on the right for more information.
 		*Added and removed semicolons where appropriate
 		*Changed indentation to make code more readable, mostly to comments
 		*Changed order of scripts so Google Maps API loads last and moved the 
-			AJAX call inside initMap() function to match the success callback 
+			AJAX call inside initMap() function to match the success callback
+		*Added onerror attribute to Google Maps API script call in index.html
+			to gracefully handle the AJAX call failing
