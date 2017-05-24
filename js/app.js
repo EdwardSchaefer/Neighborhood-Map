@@ -41,7 +41,7 @@ $.ajax({
         markers.push(marker);
     }
 //If the data isn't retrieved from the server, send the error message to the KO observable
-});.fail(function() {
+}).fail(function() {
     viewModel.ajaxFail('Failed to retrieve data via API');
 });
 
