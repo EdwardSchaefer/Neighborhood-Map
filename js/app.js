@@ -9,17 +9,17 @@ $.ajax({
     url: "https://data.baltimorecity.gov/resource/x3eq-9sua.json",
     type: "GET",
     data: {
-      "$limit" : 5000,
-      "$$app_token" : "IAPCDodkEyfP95b6c7eJLut59"
+        "$limit" : 5000,
+        "$$app_token" : "IAPCDodkEyfP95b6c7eJLut59"
     }
-//Prepare the data for Google Maps API and Knockout 
+    //Prepare the data for Google Maps API and Knockout 
 }).done(function(data) {
-//Define the prototype for the Google Maps InfoWindow object 
+    //Define the prototype for the Google Maps InfoWindow object 
     var largeInfoWindow = new google.maps.InfoWindow();
     for(var i = 0; i < data.length; i++) {
-//Add a unique ID for each object in the array
+        //Add a unique ID for each object in the array
         data[i].id = i;
-//Create a new marker object and add the data to it
+        //Create a new marker object and add the data to it
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(data[i].location_1.coordinates[1], data[i].location_1.coordinates[0]),
             firstname: data[i].artistfirstname,
@@ -31,16 +31,16 @@ $.ajax({
             icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
             map: map
         });
-//Add an event listener (google API) that displays the infowindow
+        //Add an event listener (google API) that displays the infowindow
         marker.addListener('click', function(){
             populateInfoWindow(this, largeInfoWindow);
         });
-//Add location to array for KO list
+        //Add location to array for KO list
         viewModel.locations.push(data[i]);
-//Add marker to the global markers object
+        //Add marker to the global markers object
         markers.push(marker);
     }
-//If the data isn't retrieved from the server, send the error message to the KO observable
+    //If the data isn't retrieved from the server, send the error message to the KO observable
 }).fail(function() {
     viewModel.ajaxFail('Failed to retrieve data via API');
 });
@@ -53,21 +53,21 @@ var Model = {
 //View Model for Knockout
 var AppViewModel = function() {
     var self = this;
-//Locations for KO list
+    //Locations for KO list
     self.locations = ko.observableArray();
-//Search query observable which is updated every keystroke
+    //Search query observable which is updated every keystroke
     self.query = ko.observable('');
-//Search results observable which returns any location with an artist last name that matches the query
+    //Search results observable which returns any location with an artist last name that matches the query
     self.filtered = ko.computed(function(){
-//Takes the locations array and returns any entries with a matching index 
+        //Takes the locations array and returns any entries with a matching index 
         return ko.utils.arrayFilter(self.locations(), function(location){
-//Returns a value only if a matching value is found (-1 is returned if there is none)
+            //Returns a value only if a matching value is found (-1 is returned if there is none)
             return location.artistlastname.toLowerCase().indexOf(self.query().toLowerCase()) >= 0;
         });
     });
-//The ID of the mural in question, uesd so the clicked list mural matches the clicked marker and vice versa
+    //The ID of the mural in question, uesd so the clicked list mural matches the clicked marker and vice versa
     self.selectedMural = ko.observable();
-//Message to display if AJAX call fails
+    //Message to display if AJAX call fails
     self.ajaxFail = ko.observable('');
 };
 
@@ -96,16 +96,16 @@ function populateInfoWindow(marker, infowindow) {
         infowindow.setContent('<div>Name: ' + marker.firstname + ' ' + marker.lastname + '<br>' +
                 'Address: ' + marker.address + ' ' + marker.zip + '<br>' +
                 'Year: ' + marker.year + '</div>');
-//Open the InfoWindow
+        //Open the InfoWindow
         infowindow.open(map, marker);
-//Make sure the marker property is cleared if the InfoWindow is closed and list item unhighlighted
+        //Make sure the marker property is cleared if the InfoWindow is closed and list item unhighlighted
         infowindow.addListener('closeclick', function() {
             infowindow.marker = null;
             viewModel.selectedMural(null);
         });
-//Changes marker's icon from default
+        //Changes marker's icon from default
         marker.setIcon('http://maps.google.com/mapfiles/ms/icons/purple-dot.png');
-//Sets the KO observable to match the mural's ID so it is highlighted on the list
+        //Sets the KO observable to match the mural's ID so it is highlighted on the list
         viewModel.selectedMural(marker.id);
     }
 }

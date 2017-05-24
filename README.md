@@ -36,3 +36,4 @@ markers on the right for more information.
 			properly on modbile devices
 		*Removed outdated "type" attribute from link to styles.css
 		*Added and removed semicolons where appropriate
+		*Changed indentation to make code more readable, mostly to comments
