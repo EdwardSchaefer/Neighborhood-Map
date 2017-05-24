@@ -34,3 +34,4 @@ markers on the right for more information.
 			and gave it a bit of padding
 		*Added "viewport" meta tag to index.html so the page will display 
 			properly on modbile devices
+		*Removed outdated "type" attribute from link to styles.css
