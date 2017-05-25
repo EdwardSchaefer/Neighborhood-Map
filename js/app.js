@@ -102,7 +102,11 @@ function populateInfoWindow(marker, infowindow) {
             infowindow.marker = null;
             viewModel.selectedMural(null);
         });
-        //Changes marker's icon from default
+        //Resets marker icons to default
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
+        }
+        //Changes selected marker's icon from default
         marker.setIcon('http://maps.google.com/mapfiles/ms/icons/purple-dot.png');
         //Sets the KO observable to match the mural's ID so it is highlighted on the list
         viewModel.selectedMural(marker.id);

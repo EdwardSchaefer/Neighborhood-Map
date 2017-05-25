@@ -41,3 +41,5 @@ markers on the right for more information.
 			AJAX call inside initMap() function to match the success callback
 		*Added onerror attribute to Google Maps API script call in index.html
 			to gracefully handle the AJAX call failing
+		*Added a functionality to populateInfoWindow so that unselected markers
+			revert to the default red icon if they are no longer selected
