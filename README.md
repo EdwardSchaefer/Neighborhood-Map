@@ -43,3 +43,6 @@ markers on the right for more information.
 			to gracefully handle the AJAX call failing
 		*Added a functionality to populateInfoWindow so that unselected markers
 			revert to the default red icon if they are no longer selected
+
+	5/27/2017:
+		*Modified meta tags and removed unnecessary </input> tag
