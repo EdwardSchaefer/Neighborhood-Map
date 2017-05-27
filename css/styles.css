@@ -16,6 +16,7 @@ body {
 	height: 100%;
 	background-color: #FFFFBB;
 	padding-left: 10px;
+	overflow-y: scroll
 }
 
 #controls {

@@ -48,3 +48,5 @@ markers on the right for more information.
 		*Modified meta tags and removed unnecessary </input> tag
 		*Removed superfluous valueUpdate attribute from search box and 
 			specified that it only searches for last names
+		*Added "overflow-y: scroll" to sidebar element to make overflowing 
+			text readable.
