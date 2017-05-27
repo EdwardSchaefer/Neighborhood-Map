@@ -46,3 +46,5 @@ markers on the right for more information.
 
 	5/27/2017:
 		*Modified meta tags and removed unnecessary </input> tag
+		*Removed superfluous valueUpdate attribute from search box and 
+			specified that it only searches for last names
