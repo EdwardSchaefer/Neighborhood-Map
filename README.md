@@ -50,3 +50,6 @@ markers on the right for more information.
 			specified that it only searches for last names
 		*Added "overflow-y: scroll" to sidebar element to make overflowing 
 			text readable.
+
+	5/29/2017:
+		*Changed div elements to semantic HTML
