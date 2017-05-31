@@ -97,8 +97,9 @@ function populateInfoWindow(marker, infowindow) {
                 'Year: ' + marker.year + '</div>');
         //Open the InfoWindow
         infowindow.open(map, marker);
-        //Make sure the marker property is cleared if the InfoWindow is closed and list item unhighlighted
+        //Make sure the marker property is cleared if the InfoWindow is closed and list item/marker unhighlighted
         infowindow.addListener('closeclick', function() {
+            marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
             infowindow.marker = null;
             viewModel.selectedMural(null);
         });

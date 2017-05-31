@@ -53,3 +53,6 @@ markers on the right for more information.
 
 	5/29/2017:
 		*Changed div elements to semantic HTML
+
+	5/30/2017:
+		*Added to code to infowindow's closeClick listener which sets the marker back to red
