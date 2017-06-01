@@ -68,9 +68,10 @@ function initMap() {
                 icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
                 map: map
             });
-            //Add an event listener (google API) that displays the infowindow
+            //Add an event listener (google API) that displays the infowindow and pans to the marker
             marker.addListener('click', function(){
                 populateInfoWindow(this, largeInfoWindow);
+                map.panTo(marker.getPosition());
             });
             //Add location to array for KO list
             viewModel.locations.push(data[i]);

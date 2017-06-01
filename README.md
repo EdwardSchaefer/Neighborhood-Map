@@ -56,3 +56,6 @@ markers on the right for more information.
 
 	5/30/2017:
 		*Added to code to infowindow's closeClick listener which sets the marker back to red
+
+	5/31/2017:
+		*Added functionality to click listener which pans to the marker when it's selected
