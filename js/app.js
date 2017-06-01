@@ -62,7 +62,6 @@ function initMap() {
                 firstname: data[i].artistfirstname,
                 lastname: data[i].artistlastname,
                 address: data[i].location,
-                zip: data[i].location_1_zip,
                 year: data[i].year,
                 id: i,
                 icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
@@ -94,7 +93,7 @@ function populateInfoWindow(marker, infowindow) {
     if (infowindow.marker != marker) {
         infowindow.marker = marker;
         infowindow.setContent('<div>Name: ' + marker.firstname + ' ' + marker.lastname + '<br>' +
-                'Address: ' + marker.address + ' ' + marker.zip + '<br>' +
+                'Address: ' + marker.address + '<br>' +
                 'Year: ' + marker.year + '</div>');
         //Open the InfoWindow
         infowindow.open(map, marker);

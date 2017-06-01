@@ -59,3 +59,6 @@ markers on the right for more information.
 
 	5/31/2017:
 		*Added functionality to click listener which pans to the marker when it's selected
+
+	6/1/2017:
+		*Removed zipcode information from markers
