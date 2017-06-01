@@ -55,10 +55,14 @@ markers on the right for more information.
 		*Changed div elements to semantic HTML
 
 	5/30/2017:
-		*Added to code to infowindow's closeClick listener which sets the marker back to red
+		*Added to code to infowindow's closeClick listener which sets the 
+			marker back to red
 
 	5/31/2017:
-		*Added functionality to click listener which pans to the marker when it's selected
+		*Added functionality to click listener which pans to the marker when 
+			it's selected
 
 	6/1/2017:
 		*Removed zipcode information from markers
+		*Switched Socrata API endpoint to a new set of data for the same 
+			murals and adjusted lat/long assignment from JSON object

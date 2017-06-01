@@ -43,7 +43,7 @@ function selectMural(mural) {
 function initMap() {
     //Define parameters for retrieving data from Open Baltimore/Socrata Open Data API
     $.ajax({
-        url: "https://data.baltimorecity.gov/resource/x3eq-9sua.json",
+        url: "https://data.baltimorecity.gov/resource/zqh4-9ud5.json",
         type: "GET",
         data: {
             "$limit" : 5000,
@@ -58,7 +58,7 @@ function initMap() {
             data[i].id = i;
             //Create a new marker object and add the data to it
             var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(data[i].location_1.coordinates[1], data[i].location_1.coordinates[0]),
+                position: new google.maps.LatLng(data[i].location_1.latitude, data[i].location_1.longitude),
                 firstname: data[i].artistfirstname,
                 lastname: data[i].artistlastname,
                 address: data[i].location,
