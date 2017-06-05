@@ -66,3 +66,7 @@ markers on the right for more information.
 		*Removed zipcode information from markers
 		*Switched Socrata API endpoint to a new set of data for the same 
 			murals and adjusted lat/long assignment from JSON object
+
+	6/4/2017:
+		*Added imageURLs to data models retrieved from recently added data set 
+			and added code to display them in the infoWindow

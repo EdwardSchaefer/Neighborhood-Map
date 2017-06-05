@@ -56,6 +56,8 @@ function initMap() {
         for(var i = 0; i < data.length; i++) {
             //Add a unique ID for each object in the array
             data[i].id = i;
+            //See if the mural has an image, if not, set to empty string
+            imageURL = data[i].image ? "https://data.baltimorecity.gov/views/zqh4-9ud5/files/" + data[i].image.file_id : "";
             //Create a new marker object and add the data to it
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(data[i].location_1.latitude, data[i].location_1.longitude),
@@ -65,6 +67,7 @@ function initMap() {
                 year: data[i].year,
                 id: i,
                 icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+                imageURL: imageURL, 
                 map: map
             });
             //Add an event listener (google API) that displays the infowindow and pans to the marker
@@ -94,7 +97,8 @@ function populateInfoWindow(marker, infowindow) {
         infowindow.marker = marker;
         infowindow.setContent('<div>Name: ' + marker.firstname + ' ' + marker.lastname + '<br>' +
                 'Address: ' + marker.address + '<br>' +
-                'Year: ' + marker.year + '</div>');
+                'Year: ' + marker.year + '<br>' + 
+                '<img src = ' + marker.imageURL +  ' height="250"></div>');
         //Open the InfoWindow
         infowindow.open(map, marker);
         //Make sure the marker property is cleared if the InfoWindow is closed and list item/marker unhighlighted
