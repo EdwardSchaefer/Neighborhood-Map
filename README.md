@@ -70,3 +70,7 @@ markers on the right for more information.
 	6/4/2017:
 		*Added imageURLs to data models retrieved from recently added data set 
 			and added code to display them in the infoWindow
+
+	6/5/2017:
+		*Added code to determine if the mural has an associated image, and if 
+			not, don't add broken img tag to the infoWindow

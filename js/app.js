@@ -95,10 +95,15 @@ function populateInfoWindow(marker, infowindow) {
 //Check to make sure the InfoWindow is not already opened on this marker.
     if (infowindow.marker != marker) {
         infowindow.marker = marker;
+        //Determine if there is an image associated with the mural and define it in the img tag, otherwise add no image
+        if (marker.imageURL) {
+            imageTag = '<img src = ' + marker.imageURL +  ' height="250"></div>'
+        } else {
+            imageTag = '';
+        }
         infowindow.setContent('<div>Name: ' + marker.firstname + ' ' + marker.lastname + '<br>' +
                 'Address: ' + marker.address + '<br>' +
-                'Year: ' + marker.year + '<br>' + 
-                '<img src = ' + marker.imageURL +  ' height="250"></div>');
+                'Year: ' + marker.year + '<br>' + imageTag);
         //Open the InfoWindow
         infowindow.open(map, marker);
         //Make sure the marker property is cleared if the InfoWindow is closed and list item/marker unhighlighted
