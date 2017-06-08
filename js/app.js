@@ -16,12 +16,15 @@ var AppViewModel = function() {
     self.locations = ko.observableArray();
     //Search query observable which is updated every keystroke
     self.query = ko.observable('');
-    //Search results observable which returns any location with an artist last name that matches the query
+    //Search results observable which returns any location with an artist first/last name or address that matches the query
     self.filtered = ko.computed(function(){
         //Takes the locations array and returns any entries with a matching index 
         return ko.utils.arrayFilter(self.locations(), function(location){
-            //Returns a value only if a matching value is found (-1 is returned if there is none)
-            return location.artistlastname.toLowerCase().indexOf(self.query().toLowerCase()) >= 0;
+            //Returns a value only if a matching value is found in at least 1 attribute
+            //(-1 is returned if there is none)
+            return (location.artistlastname.toLowerCase().indexOf(self.query().toLowerCase()) >= 0 ||
+                location.artistfirstname.toLowerCase().indexOf(self.query().toLowerCase()) >= 0 ||
+                location.location.toLowerCase().indexOf(self.query().toLowerCase()) >= 0);
         });
     });
     //The ID of the mural in question, uesd so the clicked list mural matches the clicked marker and vice versa

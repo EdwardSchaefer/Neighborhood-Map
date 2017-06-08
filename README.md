@@ -78,3 +78,5 @@ markers on the right for more information.
 	6/7/2017:
 		*Added a dataFilter function to ajax request which sets undefined 
 			attribute/value pairs to an empty string
+		*Changed logic of filter function to return results which match 
+			first/last name or address
