@@ -74,3 +74,7 @@ markers on the right for more information.
 	6/5/2017:
 		*Added code to determine if the mural has an associated image, and if 
 			not, don't add broken img tag to the infoWindow
+
+	6/7/2017:
+		*Added a dataFilter function to ajax request which sets undefined 
+			attribute/value pairs to an empty string

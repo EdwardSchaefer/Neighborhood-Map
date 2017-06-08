@@ -48,6 +48,25 @@ function initMap() {
         data: {
             "$limit" : 5000,
             "$$app_token" : "IAPCDodkEyfP95b6c7eJLut59"
+        },
+        //A dataFilter function which manipulates/sanitizes data before it's finsihed loading.
+        //If an entry is missing an attribute/value pair, it is set to an empty string.
+        //This prevents "undefined" values from causing crashes.
+        dataFilter: function(data) {
+            //Parse data from string to JS object
+            var data = JSON.parse(data);
+            //Define length outside of loop
+            dataLength = data.length
+            //Loop through the data. If an attribute is undefined, set it to empty string.
+            for(var i = 0; i < dataLength; i++) {
+                data[i].artistfirstname = data[i].artistfirstname ? data[i].artistfirstname : "";
+                data[i].artistlastname = data[i].artistlastname ? data[i].artistlastname : "";
+                data[i].year = data[i].year ? data[i].year : "";
+                data[i].location = data[i].location ? data[i].location : "";
+                data[i].image = data[i].image ? data[i].image : "";
+            }
+            //Return the modified results as a string.
+            return JSON.stringify(data);
         }
         //Prepare the data for Google Maps API and Knockout 
     }).done(function(data) {
