@@ -31,6 +31,12 @@ var AppViewModel = function() {
     self.selectedMural = ko.observable();
     //Message to display if AJAX call fails
     self.ajaxFail = ko.observable('');
+    //Photo album view if true, list view if false
+    self.albumView = ko.observable(false);
+    //Function to change self.albumView
+    changeToAlbumView = function(choice){
+        self.albumView(choice)
+    };
 };
 
 //Apply bindings to view

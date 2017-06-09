@@ -80,5 +80,10 @@ markers on the right for more information.
 			attribute/value pairs to an empty string
 		*Changed logic of filter function to return results which match 
 			first/last name or address
+
+	6/8/2017:
 		*Modified dataFilter for images to be more rigorous by defining 
 			image and it's attributes
+
+	6/9/2017:
+		*Implemented album view functionality

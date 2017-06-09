@@ -32,8 +32,13 @@ body {
 }
 
 #place {
-	padding-top: 1px;
-	padding-bottom: 1px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+#thumbnail {
+	width: 49%;
+	display: inline-block;
 }
 
 #map {
