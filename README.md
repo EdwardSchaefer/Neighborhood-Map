@@ -87,3 +87,7 @@ markers on the right for more information.
 
 	6/9/2017:
 		*Implemented album view functionality
+
+	6/11/2017:
+		*Implemented cleanData function which modifies errors in the original 
+			data; also defined another variable outside for loop arguments

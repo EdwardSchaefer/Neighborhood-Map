@@ -48,6 +48,13 @@ function selectMural(mural) {
     google.maps.event.trigger(markers[mural.id], 'click');
 }
 
+//a function to modify original data with errors/problems
+//splices should be
+function cleanData(data) {
+    //duplicate of #13
+    data.splice(18, 1);
+}
+
 //Initialize the map for Google Maps API
 function initMap() {
     //Define parameters for retrieving data from Open Baltimore/Socrata Open Data API
@@ -65,7 +72,7 @@ function initMap() {
             //Parse data from string to JS object
             var data = JSON.parse(data);
             //Define length outside of loop
-            dataLength = data.length
+            var dataLength = data.length;
             //Loop through the data. If an attribute is undefined, set it to empty string.
             for(var i = 0; i < dataLength; i++) {
                 data[i].artistfirstname = data[i].artistfirstname ? data[i].artistfirstname : "";
@@ -76,6 +83,7 @@ function initMap() {
                     data[i].image = {"file_id": "", "filename": ""};
                 }
             }
+            cleanData(data);
             //Return the modified results as a string.
             return JSON.stringify(data);
         }
@@ -83,7 +91,9 @@ function initMap() {
     }).done(function(data) {
         //Define the prototype for the Google Maps InfoWindow object 
         var largeInfoWindow = new google.maps.InfoWindow();
-        for(var i = 0; i < data.length; i++) {
+        //Define length outside of loop
+        var dataLength = data.length;
+        for(var i = 0; i < dataLength; i++) {
             //Add a unique ID for each object in the array
             data[i].id = i;
             //See if the mural has an image, if not, set to empty string
