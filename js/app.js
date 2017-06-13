@@ -48,9 +48,12 @@ function selectMural(mural) {
     google.maps.event.trigger(markers[mural.id], 'click');
 }
 
-//a function to modify original data with errors/problems
-//splices should be
+//modifies original data with errors/problems
+//comments provide explanation
+//splices should be last
 function cleanData(data) {
+    //wrong lat/long
+    data[2].location_1.latitude = 39.319169; data[2].location_1.longitude = -76.625623;
     //duplicate of #13
     data.splice(18, 1);
 }

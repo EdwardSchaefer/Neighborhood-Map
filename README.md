@@ -91,3 +91,6 @@ markers on the right for more information.
 	6/11/2017:
 		*Implemented cleanData function which modifies errors in the original 
 			data; also defined another variable outside for loop arguments
+
+	6/12/2017:
+		*Added another mural to cleanData function
