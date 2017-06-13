@@ -95,3 +95,4 @@ markers on the right for more information.
 	6/12/2017:
 		*Added another mural to cleanData function
 		*Modified imageURL to be a persistent property of data object
+		*Added Flag of Baltimore resource
