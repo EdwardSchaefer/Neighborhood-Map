@@ -100,7 +100,7 @@ function initMap() {
             //Add a unique ID for each object in the array
             data[i].id = i;
             //See if the mural has an image, if not, set to empty string
-            imageURL = data[i].image.file_id ? "https://data.baltimorecity.gov/views/zqh4-9ud5/files/" + data[i].image.file_id : "";
+            data[i].image.imageURL = data[i].image.file_id ? "https://data.baltimorecity.gov/views/zqh4-9ud5/files/" + data[i].image.file_id : "";
             //Create a new marker object and add the data to it
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(data[i].location_1.latitude, data[i].location_1.longitude),
@@ -110,7 +110,7 @@ function initMap() {
                 year: data[i].year,
                 id: i,
                 icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-                imageURL: imageURL, 
+                imageURL: data[i].image.imageURL, 
                 map: map
             });
             //Add an event listener (google API) that displays the infowindow and pans to the marker
