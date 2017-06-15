@@ -50,10 +50,12 @@ function selectMural(mural) {
 
 //modifies original data with errors/problems
 //comments provide explanation
-//splices should be last
+//splices should be last and in reverse order
 function cleanData(data) {
     //wrong lat/long
     data[2].location_1.latitude = 39.319169; data[2].location_1.longitude = -76.625623;
+    //duplicate of #13
+    data.splice(74, 1);
     //duplicate of #13
     data.splice(18, 1);
 }

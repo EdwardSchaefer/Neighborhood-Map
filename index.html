@@ -23,7 +23,7 @@
                 <span data-bind='text: $data.year'></span>
             </nav>
             <nav id="thumbnail" data-bind="visible: $parent.albumView, click: selectMural, css: { selected: viewModel.selectedMural() == $data.id }">
-                <img data-bind="attr:{src: 'https://data.baltimorecity.gov/views/zqh4-9ud5/files/' + $data.image.file_id}" width="100%"></img>
+                <img data-bind="attr:{src: 'https://data.baltimorecity.gov/views/zqh4-9ud5/files/' + $data.image.file_id}" width="100%"><div data-bind='text: $data.id'></div></img>
             </nav>
         </nav>
             <nav data-bind='text: $data.ajaxFail'></nav>
