@@ -103,3 +103,5 @@ markers on the right for more information.
 	6/15/2017:
 		*Fixed app.js and index.html to property display flag when image is 
 			missing. Also reuploaded flag.svg
+		*Fixed bug from last update which prevented images from displaying 
+			in infoWindow

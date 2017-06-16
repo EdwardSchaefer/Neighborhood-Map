@@ -98,7 +98,7 @@ function initMap() {
         for(var i = 0; i < dataLength; i++) {
             //Add a unique ID for each object in the array
             data[i].id = i;
-            //See if the mural has an image, if not, set to empty string
+            //See if the mural has an image, if not, set path to img/flag.svg
             if (!data[i].image){
                 data[i].image = {"file_id": "", "filename": ""};
                 data[i].imageURL = "img/flag.svg";
@@ -114,7 +114,7 @@ function initMap() {
                 year: data[i].year,
                 id: i,
                 icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-                imageURL: data[i].image.imageURL, 
+                imageURL: data[i].imageURL, 
                 map: map
             });
             //Add an event listener (google API) that displays the infowindow and pans to the marker
