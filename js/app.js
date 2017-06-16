@@ -48,6 +48,33 @@ function selectMural(mural) {
     google.maps.event.trigger(markers[mural.id], 'click');
 }
 
+//Sees if any pairs of mural locations has matching latitudes, then prints the pairs in the console
+//This is useful debugger for detecting matching latitudes, which suggests the markers are overlapping
+//Matching pairs are grouped together in clusers which overlap on the map
+//Murals which share the same 'i' id are in the same cluster
+//To use the function, uncomment line 107
+function checkDuplicateLats(data) {
+    //making sure the original array is not modified
+    dataCopy = data;
+    var dataLength = dataCopy.length;
+    //how many pairs there are
+    var k = 0;
+    //Outer for loop defines the first mural to be tested
+    for(var i = 0; i < dataLength; i++) {
+        //Inner for loop defines the mural it is being tested against
+        //setting j just ahead of i avoid testing a mural against itself and avoids B/A comparisons
+        for(var j = i + 1; j < dataLength; j++) {
+            //if the two latitudes match, print out the IDs and addresses
+            if (dataCopy[i].location_1.latitude == dataCopy[j].location_1.latitude) {
+                k++;
+                console.log("#" + k + ": " + i + "/" + j + ": " + dataCopy[i].location + "/" + dataCopy[j].location);
+                //NaN effectively prevents the given mural from showing up in any other pairs
+                dataCopy[j].location_1.latitude = NaN;
+            }
+        }
+    }
+}
+
 //modifies original data with errors/problems
 //comments provide explanation
 //splices should be last and in reverse order
@@ -76,6 +103,8 @@ function initMap() {
         dataFilter: function(data) {
             //Parse data from string to JS object
             var data = JSON.parse(data);
+            //check for duplicate latitudes
+            //checkDuplicateLats(data)
             //Define length outside of loop
             var dataLength = data.length;
             //Loop through the data. If an attribute is undefined, set it to empty string.
@@ -150,7 +179,7 @@ function populateInfoWindow(marker, infowindow) {
         }
         infowindow.setContent('<div>Name: ' + marker.firstname + ' ' + marker.lastname + '<br>' +
                 'Address: ' + marker.address + '<br>' +
-                'Year: ' + marker.year + '<br>' + imageTag);
+                'Year: ' + marker.year + '<br>' + marker.id + '<br>' + imageTag);
         //Open the InfoWindow
         infowindow.open(map, marker);
         //Make sure the marker property is cleared if the InfoWindow is closed and list item/marker unhighlighted
@@ -184,3 +213,4 @@ function markerUpdate() {
         markers[x].setMap(map);
     }
 }
+

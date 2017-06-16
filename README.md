@@ -76,7 +76,7 @@ markers on the right for more information.
 			not, don't add broken img tag to the infoWindow
 
 	6/7/2017:
-		*Added a dataFilter function to ajax request which sets undefined 
+		*Added a "dataFilter" function to ajax request which sets undefined 
 			attribute/value pairs to an empty string
 		*Changed logic of filter function to return results which match 
 			first/last name or address
@@ -105,3 +105,7 @@ markers on the right for more information.
 			missing. Also reuploaded flag.svg
 		*Fixed bug from last update which prevented images from displaying 
 			in infoWindow
+
+	6/16/2017
+		*Added "checkDuplicateLats" function which prints overlapping markers
+			in the console
