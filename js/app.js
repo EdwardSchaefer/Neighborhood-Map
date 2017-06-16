@@ -84,9 +84,6 @@ function initMap() {
                 data[i].artistlastname = data[i].artistlastname ? data[i].artistlastname : "";
                 data[i].year = data[i].year ? data[i].year : "";
                 data[i].location = data[i].location ? data[i].location : "";
-                if (!data[i].image){
-                    data[i].image = {"file_id": "", "filename": ""};
-                }
             }
             cleanData(data);
             //Return the modified results as a string.
@@ -102,7 +99,12 @@ function initMap() {
             //Add a unique ID for each object in the array
             data[i].id = i;
             //See if the mural has an image, if not, set to empty string
-            data[i].image.imageURL = data[i].image.file_id ? "https://data.baltimorecity.gov/views/zqh4-9ud5/files/" + data[i].image.file_id : "";
+            if (!data[i].image){
+                data[i].image = {"file_id": "", "filename": ""};
+                data[i].imageURL = "img/flag.svg";
+            } else {
+                data[i].imageURL = ("https://data.baltimorecity.gov/views/zqh4-9ud5/files/" + data[i].image.file_id);
+            }
             //Create a new marker object and add the data to it
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(data[i].location_1.latitude, data[i].location_1.longitude),

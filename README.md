@@ -99,3 +99,7 @@ markers on the right for more information.
 
 	6/14/017:
 		*Added another mural to cleanData function
+
+	6/15/2017:
+		*Fixed app.js and index.html to property display flag when image is 
+			missing. Also reuploaded flag.svg
