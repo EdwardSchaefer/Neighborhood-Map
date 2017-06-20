@@ -54,8 +54,8 @@ function selectMural(mural) {
 //Murals which share the same 'i' id are in the same cluster
 //To use the function, uncomment line 107
 function checkDuplicateLats(data) {
-    //making sure the original array is not modified
-    dataCopy = data;
+    //clone the original data with JSON.parse/JSON.stringify so the original array is not modified
+    var dataCopy = JSON.parse(JSON.stringify(data));
     var dataLength = dataCopy.length;
     //how many pairs there are
     var k = 0;
