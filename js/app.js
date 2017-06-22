@@ -81,6 +81,8 @@ function checkDuplicateLats(data) {
 function cleanData(data) {
     //wrong lat/long
     data[2].location_1.latitude = 39.319169; data[2].location_1.longitude = -76.625623;
+    //wrong lat/long (pillar)
+    data[125].location_1.latitude = 39.293447; data[125].location_1.longitude = -76.610483;
     //duplicate of #13
     data.splice(74, 1);
     //duplicate of #13

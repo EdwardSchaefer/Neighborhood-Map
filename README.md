@@ -113,3 +113,6 @@ markers on the right for more information.
 	6/19/2017:
 		*Modify checkDuplicateUpdates function to propertly clone original 
 			data, instead of reassigning it
+
+	6/21/2017:
+		*Added another mural to cleanData function
