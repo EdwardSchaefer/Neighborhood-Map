@@ -75,18 +75,19 @@ function checkDuplicateLats(data) {
     }
 }
 
-//modifies original data with errors/problems
-//comments provide explanation
-//splices should be last and in reverse order
+//Modifies original data with errors/problems
+//Comments provide explanation
+//Splices should be last and in reverse order
 function cleanData(data) {
-    //wrong lat/long
-    data[2].location_1.latitude = 39.319169; data[2].location_1.longitude = -76.625623;
-    //wrong lat/long (pillar)
-    data[125].location_1.latitude = 39.293447; data[125].location_1.longitude = -76.610483;
-    //duplicate of #13
-    data.splice(74, 1);
-    //duplicate of #13
-    data.splice(18, 1);
+    cleanDataLength = cleanDataObject.length;
+    for(var i = 0; i < cleanDataLength; i++) {
+        if (cleanDataObject[i].operation == "latLong") {
+            data[cleanDataObject[i].id].location_1.latitude = cleanDataObject[i].latitude;
+            data[cleanDataObject[i].id].location_1.longitude = cleanDataObject[i].longitude;
+        } else if (cleanDataObject[i].operation == "splice") {
+            data.splice(cleanDataObject[i].id, 1);
+        }
+    }
 }
 
 //Initialize the map for Google Maps API
