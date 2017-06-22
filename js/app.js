@@ -85,7 +85,9 @@ function cleanData(data) {
             data[cleanDataObject[i].id].location_1.latitude = cleanDataObject[i].latitude;
             data[cleanDataObject[i].id].location_1.longitude = cleanDataObject[i].longitude;
         } else if (cleanDataObject[i].operation == "splice") {
-            data.splice(cleanDataObject[i].id, 1);
+            //splice disabled for now
+            console.log("splice disabled")
+            //data.splice(cleanDataObject[i].id, 1);
         }
     }
 }

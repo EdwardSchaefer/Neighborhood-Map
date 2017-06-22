@@ -119,3 +119,4 @@ markers on the right for more information.
 
 	6/22/2017:
 		*Refactor cleanData function to refer to seperate file for data
+		*Add several murals to cleanData function
