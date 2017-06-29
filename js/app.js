@@ -75,15 +75,34 @@ function checkDuplicateLats(data) {
     }
 }
 
+function geoCodeAddress(address) {
+    //Define the prototype for the Geocoding service
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({'address': address}, function(results, status) {
+    if (status === 'OK') {
+        console.log(results[0].geometry.location.lat());
+        console.log(results[0].geometry.location.lng());
+        console.log(status);
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+
 //Modifies original data with errors/problems
 //Comments provide explanation
 //Splices should be last and in reverse order
 function cleanData(data) {
     cleanDataLength = cleanDataObject.length;
+    //cleanDataParsed = JSON.parse(cleanData)
     for(var i = 0; i < cleanDataLength; i++) {
         if (cleanDataObject[i].operation == "latLong") {
             data[cleanDataObject[i].id].location_1.latitude = cleanDataObject[i].latitude;
             data[cleanDataObject[i].id].location_1.longitude = cleanDataObject[i].longitude;
+        } else if (cleanDataObject[i].operation == "geoCode") {
+            var address = data[i].location;
+            console.log(cleanDataObject[i].id + ": " + address);
+            geoCodeAddress(address);
         } else if (cleanDataObject[i].operation == "splice") {
             //splice disabled for now
             console.log("splice disabled")
