@@ -75,16 +75,13 @@ function checkDuplicateLats(data) {
     }
 }
 
-function geoCodeAddress(address) {
-    //Define the prototype for the Geocoding service
-    var geocoder = new google.maps.Geocoder();
+function geoCodeAddress(geocoder, data, i) {
+    var address = data[i].location;
     geocoder.geocode({'address': address}, function(results, status) {
     if (status === 'OK') {
-        console.log(results[0].geometry.location.lat());
-        console.log(results[0].geometry.location.lng());
-        console.log(status);
+        markers[i].position = results[0].geometry.location;
     } else {
-      alert('Geocode was not successful for the following reason: ' + status);
+        console.log("error status: " + status);
     }
   });
 }
@@ -94,15 +91,13 @@ function geoCodeAddress(address) {
 //Splices should be last and in reverse order
 function cleanData(data) {
     cleanDataLength = cleanDataObject.length;
-    //cleanDataParsed = JSON.parse(cleanData)
     for(var i = 0; i < cleanDataLength; i++) {
         if (cleanDataObject[i].operation == "latLong") {
             data[cleanDataObject[i].id].location_1.latitude = cleanDataObject[i].latitude;
             data[cleanDataObject[i].id].location_1.longitude = cleanDataObject[i].longitude;
         } else if (cleanDataObject[i].operation == "geoCode") {
-            var address = data[i].location;
-            console.log(cleanDataObject[i].id + ": " + address);
-            geoCodeAddress(address);
+            data[cleanDataObject[i].id].location_1.latitude = 0;
+            data[cleanDataObject[i].id].location_1.longitude = 0;
         } else if (cleanDataObject[i].operation == "splice") {
             //splice disabled for now
             console.log("splice disabled")
@@ -146,11 +141,17 @@ function initMap() {
     }).done(function(data) {
         //Define the prototype for the Google Maps InfoWindow object 
         var largeInfoWindow = new google.maps.InfoWindow();
+        //Define the prototype for the Geocoding service
+        var geocoder = new google.maps.Geocoder();
         //Define length outside of loop
         var dataLength = data.length;
         for(var i = 0; i < dataLength; i++) {
             //Add a unique ID for each object in the array
             data[i].id = i;
+            //if the mural has a bad lat/long, retrieve new lat/long with api
+            if (data[i].location_1.latitude == 0) {
+                geoCodeAddress(geocoder, data, i)
+            }
             //See if the mural has an image, if not, set path to img/flag.svg
             if (!data[i].image){
                 data[i].image = {"file_id": "", "filename": ""};
