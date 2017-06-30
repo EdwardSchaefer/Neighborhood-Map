@@ -126,4 +126,5 @@ markers on the right for more information.
 
 	6/29/2017:
 		*Develop geoCodeAddress function to actually modify marker lat/lng,
-			pass 'data' and 'i' as arguments 
+			pass 'data' and 'i' as arguments
+		*Add documentation to geoCodeAddress function

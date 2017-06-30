@@ -75,10 +75,14 @@ function checkDuplicateLats(data) {
     }
 }
 
+//Geocodes a given address for a specific mural
+//Takes the given geocoder object, the data, and the iteration number 'i'
 function geoCodeAddress(geocoder, data, i) {
+    //Get the address from the data on the specified index 'i'
     var address = data[i].location;
     geocoder.geocode({'address': address}, function(results, status) {
     if (status === 'OK') {
+        //Sets marker position to the results once the geocoding service request has resolved
         markers[i].position = results[0].geometry.location;
     } else {
         console.log("error status: " + status);
