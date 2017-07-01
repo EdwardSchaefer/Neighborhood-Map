@@ -124,7 +124,8 @@ markers on the right for more information.
 	6/28/2017:
 		*Added a Geocoder funtion which gets lat/long from an address
 
-	6/29/2017:
+	6/30/2017:
 		*Develop geoCodeAddress function to actually modify marker lat/lng,
 			pass 'data' and 'i' as arguments
 		*Add documentation to geoCodeAddress function
+		*Modify geoCodeAddress so it updates the marker on the map

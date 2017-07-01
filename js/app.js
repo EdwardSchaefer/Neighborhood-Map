@@ -82,8 +82,12 @@ function geoCodeAddress(geocoder, data, i) {
     var address = data[i].location;
     geocoder.geocode({'address': address}, function(results, status) {
     if (status === 'OK') {
+        //Remove marker from old location 
+        markers[i].setMap(null);
         //Sets marker position to the results once the geocoding service request has resolved
         markers[i].position = results[0].geometry.location;
+        //Put marker back on the map at the new location
+        markers[i].setMap(map);
     } else {
         console.log("error status: " + status);
     }
