@@ -75,23 +75,33 @@ function checkDuplicateLats(data) {
     }
 }
 
-//Geocodes a given address for a specific mural
-//Takes the given geocoder object, the data, and the iteration number 'i'
-function geoCodeAddress(geocoder, data, i) {
-    //Get the address from the data on the specified index 'i'
-    var address = data[i].location;
-    geocoder.geocode({'address': address}, function(results, status) {
-    if (status === 'OK') {
-        //Remove marker from old location 
-        markers[i].setMap(null);
-        //Sets marker position to the results once the geocoding service request has resolved
-        markers[i].position = results[0].geometry.location;
-        //Put marker back on the map at the new location
-        markers[i].setMap(map);
-    } else {
-        console.log("error status: " + status);
+//Geocodes 10 address for the murals in the geoCodeArray 
+//Takes the geoCodeArray, the given geocoder object, and the data
+function geoCode10Addresses(geoCodeArray, geocoder, data) {
+    //Define the length outside the loop 
+    geoCodeArrayLength = geoCodeArray.length;
+    //Geocode each address
+    for (i = 0; i < 10; i++) {
+        //Get the address from the data on the specified index 'i'
+        var address = data[i].location + ', Baltimore MD'
+        geocoder.geocode({
+            'address': address
+        }, function(results, status) {
+            if (status === 'OK') {
+                //Remove marker from old location 
+                markers[i].setMap(null);
+                //Sets marker position to the results once the geocoding service request has resolved
+                markers[i].position = results[0].geometry.location;
+                //Put marker back on the map at the new location
+                markers[i].setMap(map); 
+                console.log("Geocoded: " + results[0].geometry.location)
+            } else if (status === 'OVER_QUERY_LIMIT') {
+                console.log(status)
+            } else {
+                console.log("error status: " + status);
+            }
+        });
     }
-  });
 }
 
 //Modifies original data with errors/problems
@@ -151,6 +161,8 @@ function initMap() {
         var largeInfoWindow = new google.maps.InfoWindow();
         //Define the prototype for the Geocoding service
         var geocoder = new google.maps.Geocoder();
+        //The array of murals to be geocoded
+        var geoCodeArray = [];
         //Define length outside of loop
         var dataLength = data.length;
         for(var i = 0; i < dataLength; i++) {
@@ -158,7 +170,7 @@ function initMap() {
             data[i].id = i;
             //if the mural has a bad lat/long, retrieve new lat/long with api
             if (data[i].location_1.latitude == 0) {
-                geoCodeAddress(geocoder, data, i)
+                geoCodeArray.push(i);
             }
             //See if the mural has an image, if not, set path to img/flag.svg
             if (!data[i].image){
@@ -189,6 +201,8 @@ function initMap() {
             //Add marker to the global markers object
             markers.push(marker);
         }
+        //Geocode 10 addresses 
+        geoCode10Addresses(geoCodeArray, geocoder, data);
         //If the data isn't retrieved from the server, send the error message to the KO observable
     }).fail(function() {
         viewModel.ajaxFail('Failed to retrieve data via API');

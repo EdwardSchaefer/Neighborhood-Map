@@ -129,3 +129,7 @@ markers on the right for more information.
 			pass 'data' and 'i' as arguments
 		*Add documentation to geoCodeAddress function
 		*Modify geoCodeAddress so it updates the marker on the map
+
+	7/12/2017:
+		*Modify geoCodeAddress to code 10 murals at a time and rename it 
+			geoCode10Addresses
