@@ -130,6 +130,11 @@ markers on the right for more information.
 		*Add documentation to geoCodeAddress function
 		*Modify geoCodeAddress so it updates the marker on the map
 
+	7/3/2017:
+		*Add ', Baltimore MD' to end of address on geoCodeAdress function
+		*Add several murals to cleanData.js for geoCode function
+
 	7/12/2017:
 		*Modify geoCodeAddress to code 10 murals at a time and rename it 
 			geoCode10Addresses
+		*Add geoCodeLoop to call geoCode10Addresses at 10 second intervals

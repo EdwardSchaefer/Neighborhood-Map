@@ -82,18 +82,20 @@ function geoCode10Addresses(geoCodeArray, geocoder, data) {
     geoCodeArrayLength = geoCodeArray.length;
     //Geocode each address
     for (i = 0; i < 10; i++) {
+        //Iterate through the array to find the corresponding marker ID
+        j = geoCodeArray[i];
         //Get the address from the data on the specified index 'i'
-        var address = data[i].location + ', Baltimore MD'
+        var address = data[j].location + ', Baltimore MD'
         geocoder.geocode({
             'address': address
         }, function(results, status) {
             if (status === 'OK') {
                 //Remove marker from old location 
-                markers[i].setMap(null);
+                markers[j].setMap(null);
                 //Sets marker position to the results once the geocoding service request has resolved
-                markers[i].position = results[0].geometry.location;
+                markers[j].position = results[0].geometry.location;
                 //Put marker back on the map at the new location
-                markers[i].setMap(map); 
+                markers[j].setMap(map); 
                 console.log("Geocoded: " + results[0].geometry.location)
             } else if (status === 'OVER_QUERY_LIMIT') {
                 console.log(status)
@@ -101,6 +103,26 @@ function geoCode10Addresses(geoCodeArray, geocoder, data) {
                 console.log("error status: " + status);
             }
         });
+    }
+}
+
+//Calls geoCode10Addresses until all of the selected murals have been geocoded
+//Takes geoCodeArray, geocoder, data, and geoCodePassesLeft 
+function geoCodeLoop(geoCodeArray, geocoder, data, geoCodePassesLeft) {
+    //Checks to see if there are any more murals to geoCode left
+    console.log(geoCodeArray)
+    if (geoCodePassesLeft > 0) {
+        console.log(geoCodePassesLeft);
+        //Call the GeoCodeAddresses to geocode the 10 selected murals
+        geoCode10Addresses(geoCodeArray, geocoder, data);
+        //Decrease the number of passes by 10
+        geoCodePassesLeft = geoCodePassesLeft - 10;
+        //Recursively call the function after 10 seconds
+        setTimeout(function() {
+            geoCodeLoop(geoCodeArray, geocoder, data, geoCodePassesLeft);
+        }, 10000)
+    } else {
+        console.log("done " + geoCodePassesLeft);
     }
 }
 
@@ -202,7 +224,9 @@ function initMap() {
             markers.push(marker);
         }
         //Geocode 10 addresses 
-        geoCode10Addresses(geoCodeArray, geocoder, data);
+        //geoCode10Addresses(geoCodeArray, geocoder, data);
+        geoCodePassesLeft = geoCodeArray.length;
+        geoCodeLoop(geoCodeArray, geocoder, data, geoCodePassesLeft);
         //If the data isn't retrieved from the server, send the error message to the KO observable
     }).fail(function() {
         viewModel.ajaxFail('Failed to retrieve data via API');

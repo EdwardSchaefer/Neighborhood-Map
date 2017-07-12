@@ -1,4 +1,204 @@
 var cleanDataObject = [ {
+  "id" : "21",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "42",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+}
+, {
+  "id" : "49",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+}
+, {
+  "id" : "67",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+}
+, {
+  "id" : "73",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "78",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "79",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "36",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "28",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "36",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "40",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "31",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "160",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "33",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "74",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "132",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "140",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "151",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "34",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "35",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "100",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "136",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "138",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "37",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "65",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "66",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "69",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "159",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "53",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "54",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "70",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "135",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "141",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "148",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "83",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "84",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "128",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "129",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "130",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
+  "id" : "131",
+  "operation" : "geoCode",
+  "comment" : "inaccurate lat/long"
+} 
+, {
   "id" : "2",
   "operation" : "latLong",
   "latitude" : "39.319169",
