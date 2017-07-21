@@ -75,20 +75,33 @@ function checkDuplicateLats(data) {
     }
 }
 
-//Geocodes 10 address for the murals in the geoCodeArray 
-//Takes the geoCodeArray, the given geocoder object, and the data
-function geoCode10Addresses(geoCodeArray, geocoder, data) {
-    //Define the length outside the loop 
-    geoCodeArrayLength = geoCodeArray.length;
-    //Geocode each address
-    for (i = 0; i < 10; i++) {
-        //Iterate through the array to find the corresponding marker ID
-        j = geoCodeArray[i];
-        //Get the address from the data on the specified index 'i'
+//Geocodes a selection of addresses
+//Loops through each selected mural and sends a geocoding request to Google maps API
+//If the request is successful, the data in the markers[] array is modified
+//If the request fails, the reason why is logged in the console
+//The loop is executed ten times by default, then calls itself.
+//Each iteration decriments geoCodeIndex. When it is less than 10, it passes the number 
+//of remaining iterations to the function, only iterating it that many times on the last pass.
+//Takes geoCodeArray, geocoder, data, geoCodeIndex and iterations as arguments
+//geoCodeArray is the IDs of the murals to be geoCoded
+//geocoder is the geocoding object for Google maps API geocoding service
+//data is the data retrieved from the SOPA API
+//geoCodeIndex is the number of total murals to geocode and the index of the mural being geocoded
+//iterations is the number of times to execute the loop when the function is called once
+function geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, iterations) {
+    //Iterate through the loop 'iterations' number of times
+    for (i = 0; i < iterations; i++) {
+        //Find the mural ID in the geoCodeArray by selecting it by it's index
+        j = geoCodeArray[geoCodeIndex];
+        //decriment geoCodeIndex to count it as a pass and to go to the next mural in the next iteration
+        geoCodeIndex--;
+        //Get the address from the data on the specified index 'j'
         var address = data[j].location + ', Baltimore MD'
+        //Geocode with Google maps API geocoding service
         geocoder.geocode({
             'address': address
         }, function(results, status) {
+            //If it returns a result, modify the data
             if (status === 'OK') {
                 //Remove marker from old location 
                 markers[j].setMap(null);
@@ -96,33 +109,27 @@ function geoCode10Addresses(geoCodeArray, geocoder, data) {
                 markers[j].position = results[0].geometry.location;
                 //Put marker back on the map at the new location
                 markers[j].setMap(map); 
-                console.log("Geocoded: " + results[0].geometry.location)
-            } else if (status === 'OVER_QUERY_LIMIT') {
-                console.log(status)
+                //console.log("Geocoded: (j value out of sync)" + j + ": " + results[0].geometry.location)
             } else {
-                console.log("error status: " + status);
+                //If it fails, notify in the console
+                console.log("geoLoopError: " + status)
             }
         });
     }
-}
-
-//Calls geoCode10Addresses until all of the selected murals have been geocoded
-//Takes geoCodeArray, geocoder, data, and geoCodePassesLeft 
-function geoCodeLoop(geoCodeArray, geocoder, data, geoCodePassesLeft) {
-    //Checks to see if there are any more murals to geoCode left
-    console.log(geoCodeArray)
-    if (geoCodePassesLeft > 0) {
-        console.log(geoCodePassesLeft);
-        //Call the GeoCodeAddresses to geocode the 10 selected murals
-        geoCode10Addresses(geoCodeArray, geocoder, data);
-        //Decrease the number of passes by 10
-        geoCodePassesLeft = geoCodePassesLeft - 10;
-        //Recursively call the function after 10 seconds
+    //If there are at least 10 murals left, recursively call the function after 10 seconds
+    if (geoCodeIndex > 10) {
         setTimeout(function() {
-            geoCodeLoop(geoCodeArray, geocoder, data, geoCodePassesLeft);
+            geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, 10);
         }, 10000)
-    } else {
-        console.log("done " + geoCodePassesLeft);
+    //If there are less than 10 murals left, either code the remaining murals or don't call the function again
+    } else if (geoCodeIndex < 10) {
+        if (geoCodeIndex > 0) {
+            setTimeout(function() {
+                geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, geoCodeIndex);
+            }, 10000)
+        } else if (geoCodeIndex <= 0) {
+            console.log("Geocoding complete")
+        }
     }
 }
 
@@ -223,10 +230,9 @@ function initMap() {
             //Add marker to the global markers object
             markers.push(marker);
         }
-        //Geocode 10 addresses 
-        //geoCode10Addresses(geoCodeArray, geocoder, data);
-        geoCodePassesLeft = geoCodeArray.length;
-        geoCodeLoop(geoCodeArray, geocoder, data, geoCodePassesLeft);
+        //
+        geoCodeIndex = geoCodeArray.length - 1;
+        geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, 10);
         //If the data isn't retrieved from the server, send the error message to the KO observable
     }).fail(function() {
         viewModel.ajaxFail('Failed to retrieve data via API');

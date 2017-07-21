@@ -138,3 +138,8 @@ markers on the right for more information.
 		*Modify geoCodeAddress to code 10 murals at a time and rename it 
 			geoCode10Addresses
 		*Add geoCodeLoop to call geoCode10Addresses at 10 second intervals
+
+	7/20/2017:
+		*Refactor geoCode10Addresses and geoCodeLoop and combine them into 
+			one function
+		*Fix a bug where geocoding functions would call the same 10 addresses
