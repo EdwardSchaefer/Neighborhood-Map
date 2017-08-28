@@ -143,3 +143,8 @@ markers on the right for more information.
 		*Refactor geoCode10Addresses and geoCodeLoop and combine them into 
 			one function
 		*Fix a bug where geocoding functions would call the same 10 addresses
+
+	8/28/2017:
+		*Fix a bug where geocoding function was assigning the address 10 
+		times because it was out of sync with the asynchronious callback 
+		function

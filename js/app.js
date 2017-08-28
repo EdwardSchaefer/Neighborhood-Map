@@ -88,31 +88,32 @@ function checkDuplicateLats(data) {
 //data is the data retrieved from the SOPA API
 //geoCodeIndex is the number of total murals to geocode and the index of the mural being geocoded
 //iterations is the number of times to execute the loop when the function is called once
+
 function geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, iterations) {
-    //Iterate through the loop 'iterations' number of times
+    //Assign a parallel variable to work with asynchronously
+    var asyncGeoCodeIndex = geoCodeIndex;
     for (i = 0; i < iterations; i++) {
         //Find the mural ID in the geoCodeArray by selecting it by it's index
-        j = geoCodeArray[geoCodeIndex];
+        var muralID = geoCodeArray[geoCodeIndex];
         //decriment geoCodeIndex to count it as a pass and to go to the next mural in the next iteration
         geoCodeIndex--;
-        //Get the address from the data on the specified index 'j'
-        var address = data[j].location + ', Baltimore MD'
+        //Get the address from the data of the corresponding muralID
+        var address = data[muralID].location + ', Baltimore MD'
         //Geocode with Google maps API geocoding service
-        geocoder.geocode({
-            'address': address
-        }, function(results, status) {
+        geocoder.geocode({'address': address}, function(results, status) {
             //If it returns a result, modify the data
             if (status === 'OK') {
-                //Remove marker from old location 
-                markers[j].setMap(null);
+                //Remove marker from old location
+                markers[geoCodeArray[asyncGeoCodeIndex]].setMap(null);
                 //Sets marker position to the results once the geocoding service request has resolved
-                markers[j].position = results[0].geometry.location;
+                markers[geoCodeArray[asyncGeoCodeIndex]].position = results[0].geometry.location;
                 //Put marker back on the map at the new location
-                markers[j].setMap(map); 
-                //console.log("Geocoded: (j value out of sync)" + j + ": " + results[0].geometry.location)
+                markers[geoCodeArray[asyncGeoCodeIndex]].setMap(map);
+                //decrement the aynchGeocodeIndex only when the callback function is called
+                asyncGeoCodeIndex--
             } else {
                 //If it fails, notify in the console
-                console.log("geoLoopError: " + status)
+                console.log("geoLoopError: " + status + ": " + geoCodeArray[geoCodeIndex])
             }
         });
     }
