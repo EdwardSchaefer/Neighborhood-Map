@@ -109,12 +109,14 @@ function geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, iterations) {
                 markers[geoCodeArray[asyncGeoCodeIndex]].position = results[0].geometry.location;
                 //Put marker back on the map at the new location
                 markers[geoCodeArray[asyncGeoCodeIndex]].setMap(map);
-                //decrement the aynchGeocodeIndex only when the callback function is called
-                asyncGeoCodeIndex--
+                //change marker color for debugging
+                markers[geoCodeArray[asyncGeoCodeIndex]].setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
             } else {
                 //If it fails, notify in the console
                 console.log("geoLoopError: " + status + ": " + geoCodeArray[geoCodeIndex])
             }
+            //decrement the aynchGeocodeIndex only when the callback function is called
+            asyncGeoCodeIndex--
         });
     }
     //If there are at least 10 murals left, recursively call the function after 10 seconds

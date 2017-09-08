@@ -148,3 +148,7 @@ markers on the right for more information.
 		*Fix a bug where geocoding function was assigning the address 10 
 		times because it was out of sync with the asynchronious callback 
 		function
+
+	9/8/2017:
+		*Refactor geoCodeLoop to decriment geoCodeIndex outside of 
+		conditionals
