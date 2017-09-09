@@ -152,3 +152,7 @@ markers on the right for more information.
 	9/8/2017:
 		*Refactor geoCodeLoop to decriment geoCodeIndex outside of 
 		conditionals
+
+	9/9/2017:
+		*Fix a bug which would log the wrong mural ID because it wasn't called 
+		asynchronously

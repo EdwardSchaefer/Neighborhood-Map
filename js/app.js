@@ -113,7 +113,7 @@ function geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, iterations) {
                 markers[geoCodeArray[asyncGeoCodeIndex]].setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
             } else {
                 //If it fails, notify in the console
-                console.log("geoLoopError: " + status + ": " + geoCodeArray[geoCodeIndex])
+                console.log("geoLoopError: " + status + ": " + geoCodeArray[asyncGeoCodeIndex])
             }
             //decrement the aynchGeocodeIndex only when the callback function is called
             asyncGeoCodeIndex--
