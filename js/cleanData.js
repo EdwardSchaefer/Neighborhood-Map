@@ -423,6 +423,12 @@ var cleanDataObject = [ {
   "comment" : "inaccurate lat/long"
 }
 , {
+  "id" : "64",
+  "operation" : "streetView",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.3026392,-76.6094253&fov=30&heading=5&pitch=4&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
+  "comment" : "no image in data"
+}
+, {
   "id" : "74",
   "operation" : "splice",
   "comment" : "duplicate of #13"

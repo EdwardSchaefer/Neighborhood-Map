@@ -156,3 +156,6 @@ markers on the right for more information.
 	9/9/2017:
 		*Fix a bug which would log the wrong mural ID because it wasn't called 
 		asynchronously
+
+	9/12/2017:
+		*Added first streetview URL to cleanData.js
