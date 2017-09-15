@@ -159,3 +159,6 @@ markers on the right for more information.
 
 	9/12/2017:
 		*Added first streetview URL to cleanData.js
+
+	9/14/2017:
+		*Added another streetview URL to cleanData.js

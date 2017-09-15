@@ -429,6 +429,12 @@ var cleanDataObject = [ {
   "comment" : "no image in data"
 }
 , {
+  "id" : "80",
+  "operation" : "streetView",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2744549,-76.6327834&fov=50&heading=217&pitch=-8&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
+  "comment" : "no image in data"
+}
+, {
   "id" : "74",
   "operation" : "splice",
   "comment" : "duplicate of #13"
