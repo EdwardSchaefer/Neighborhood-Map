@@ -425,7 +425,7 @@ var cleanDataObject = [ {
 , {
   "id" : "0",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2505595,-76.6220999&fov=100&heading=255.45063442984406&pitch=-0.6360315745064469&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "camera phone"
 }
 , {
@@ -437,19 +437,19 @@ var cleanDataObject = [ {
 , {
   "id" : "2",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.3195309,-76.6254090&fov=42.621703759430034&heading=182.56220425057643&pitch=0.07825125591503479&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "too dark"
 }
 , {
   "id" : "3",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2962469,-76.6646675&fov=55&heading=187.3163045039478&pitch=6.251832150350907&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "camera phone"
 }
 , {
   "id" : "4",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2962469,-76.6646675&fov=55&heading=187.0150448590117&pitch=4.971278664562163&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "camera phone"
 }
 , {
@@ -461,31 +461,31 @@ var cleanDataObject = [ {
 , {
   "id" : "35",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.3291825,-76.6091828&fov=120&heading=186.2786810758346&pitch=3.2062017666805644&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "camera phone"
 }
 , {
   "id" : "36",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2940561,-76.6178015&fov=30&heading=139.84231356824984&pitch=1.0444862084239617&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "camera phone"
 }
 , {
   "id" : "47",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.3023540,-76.6429520&fov=51.5300748631509&heading=173.28169031685252&pitch=9.207615334796444&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "camera phone"
 }
 , {
   "id" : "49",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2825889,-76.6348595&fov=80&heading=326.63212529833226&pitch=-2.5642049395553954&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "camera phone"
 }
 , {
   "id" : "52",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.3147586,-76.6095209&fov=60&heading=248.9212261025965&pitch=15.927270714654412&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "camera phone"
 }
 , {
@@ -497,7 +497,7 @@ var cleanDataObject = [ {
 , {
   "id" : "58",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.3058546,-76.6334995&fov=70&heading=152.45430556843417&pitch=13.018796349911696&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "camera phone"
 }
 , {
@@ -527,19 +527,19 @@ var cleanDataObject = [ {
 , {
   "id" : "66",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2820646,-76.6507544&fov=40&heading=310.4730105445622&pitch=-1.7160859844952796&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "camera phone"
 }
 , {
   "id" : "70",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2975589,-76.5870312&fov=45&heading=5.0934425941725925&pitch=0.8007152562018689&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "camera phone"
 }
 , {
   "id" : "76",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2864891,-76.5558048&fov=50&heading=52.90557713205161&pitch=1.4611184410888853&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "camera phone"
 }
 , {
@@ -557,13 +557,13 @@ var cleanDataObject = [ {
 , {
   "id" : "81",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2906401,-76.6530540&fov=30&heading=322.34940682959257&pitch=-1.911825077359012&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "too small"
 }
 , {
   "id" : "82",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.3032962,-76.5933517&fov=30&heading=143.05349253256222&pitch=-3.1670549423807444&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "no image in data"
 }
 , {
@@ -581,19 +581,19 @@ var cleanDataObject = [ {
 , {
   "id" : "85",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2923444,-76.6168156&fov=30&heading=229.4391396190333&pitch=1.9654443002066273&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "camera phone"
 }
 , {
   "id" : "86",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.3124192,-76.6120432&fov=31.201710966942937&heading=121.27716957520579&pitch=5.431888349299172&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "no image in data"
 }
 , {
   "id" : "88",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2885691,-76.6384434&fov=22.16943951139194&heading=218.38005308221108&pitch=7.091862214985582&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "camera phone"
 }
 , {
@@ -605,13 +605,13 @@ var cleanDataObject = [ {
 , {
   "id" : "160",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2669860,-76.6315703&fov=25&heading=160.802297534554&pitch=3&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "no image in data"
 }
 , {
   "id" : "167",
   "operation" : "streetView",
-  "url" : "",
+  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2699512,-76.6486962&fov=35&heading=248.56695318259258&pitch=0.5903830626958779&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "no image in data"
 }
 , {
