@@ -423,15 +423,195 @@ var cleanDataObject = [ {
   "comment" : "inaccurate lat/long"
 }
 , {
+  "id" : "0",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "camera phone"
+}
+, {
+  "id" : "1",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "camera phone"
+}
+, {
+  "id" : "2",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "too dark"
+}
+, {
+  "id" : "3",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "camera phone"
+}
+, {
+  "id" : "4",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "camera phone"
+}
+, {
+  "id" : "28",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "camera phone"
+}
+, {
+  "id" : "35",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "camera phone"
+}
+, {
+  "id" : "36",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "camera phone"
+}
+, {
+  "id" : "47",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "camera phone"
+}
+, {
+  "id" : "49",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "camera phone"
+}
+, {
+  "id" : "52",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "camera phone"
+}
+, {
+  "id" : "56",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "camera phone"
+}
+, {
+  "id" : "58",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "camera phone"
+}
+, {
+  "id" : "62",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "camera phone"
+}
+, {
+  "id" : "63",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "camera phone"
+}
+, {
   "id" : "64",
   "operation" : "streetView",
   "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.3026392,-76.6094253&fov=30&heading=5&pitch=4&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "no image in data"
 }
 , {
+  "id" : "65",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "no image in data"
+}
+, {
+  "id" : "66",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "camera phone"
+}
+, {
+  "id" : "70",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "camera phone"
+}
+, {
+  "id" : "76",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "camera phone"
+}
+, {
+  "id" : "79",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "no image in data"
+}
+, {
   "id" : "80",
   "operation" : "streetView",
   "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2744549,-76.6327834&fov=50&heading=217&pitch=-8&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
+  "comment" : "no image in data"
+}
+, {
+  "id" : "81",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "too small"
+}
+, {
+  "id" : "82",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "no image in data"
+}
+, {
+  "id" : "83",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "no image in data"
+}
+, {
+  "id" : "84",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "no image in data"
+}
+, {
+  "id" : "85",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "camera phone"
+}
+, {
+  "id" : "86",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "no image in data"
+}
+, {
+  "id" : "88",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "camera phone"
+}
+, {
+  "id" : "90",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "no image in data"
+}
+, {
+  "id" : "160",
+  "operation" : "streetView",
+  "url" : "",
+  "comment" : "no image in data"
+}
+, {
+  "id" : "167",
+  "operation" : "streetView",
+  "url" : "",
   "comment" : "no image in data"
 }
 , {
