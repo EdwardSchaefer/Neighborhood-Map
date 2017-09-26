@@ -443,7 +443,7 @@ var cleanDataObject = [ {
 , {
   "id" : "3",
   "operation" : "streetView",
-  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2962469,-76.6646675&fov=55&heading=187.3163045039478&pitch=6.251832150350907&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
+  "url" : "",
   "comment" : "camera phone"
 }
 , {

@@ -176,3 +176,6 @@ markers on the right for more information.
 	9/26/2017:
 		*Modified cleanData function to change the URL of murals listed in 
 		cleanData.js
+
+	9/26/2017:
+		*Removed a duplicate URL from cleanData.js
