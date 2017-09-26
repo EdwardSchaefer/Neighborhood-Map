@@ -172,3 +172,7 @@ markers on the right for more information.
 	9/26/2017:
 		*Moved code for dealing with image URLs to earlier dataFilter part of 
 		ajax request
+
+	9/26/2017:
+		*Modified cleanData function to change the URL of murals listed in 
+		cleanData.js

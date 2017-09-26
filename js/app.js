@@ -147,7 +147,9 @@ function cleanData(data) {
             data[cleanDataObject[i].id].location_1.longitude = cleanDataObject[i].longitude;
         } else if (cleanDataObject[i].operation == "geoCode") {
             data[cleanDataObject[i].id].location_1.latitude = 0;
-            data[cleanDataObject[i].id].location_1.longitude = 0;
+            data[cleanDataObject[i].id].location_1.longitude = 0; 
+        } else if (cleanDataObject[i].operation == "streetView") {
+            data[cleanDataObject[i].id].imageURL = cleanDataObject[i].url;
         } else if (cleanDataObject[i].operation == "splice") {
             //splice disabled for now
             console.log("splice disabled")
