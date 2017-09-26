@@ -168,3 +168,7 @@ markers on the right for more information.
 
 	9/24/2017:
 		*Added several streetview URLs to cleanData.js
+
+	9/26/2017:
+		*Moved code for dealing with image URLs to earlier dataFilter part of 
+		ajax request
