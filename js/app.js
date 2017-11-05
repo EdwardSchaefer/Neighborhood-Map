@@ -96,28 +96,11 @@ function geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, iterations) {
         //Find the mural ID in the geoCodeArray by selecting it by it's index
         var muralID = geoCodeArray[geoCodeIndex];
         //decriment geoCodeIndex to count it as a pass and to go to the next mural in the next iteration
-        geoCodeIndex--;
         //Get the address from the data of the corresponding muralID
         var address = data[muralID].location + ', Baltimore MD'
         //Geocode with Google maps API geocoding service
-        geocoder.geocode({'address': address}, function(results, status) {
-            //If it returns a result, modify the data
-            if (status === 'OK') {
-                //Remove marker from old location
-                markers[geoCodeArray[asyncGeoCodeIndex]].setMap(null);
-                //Sets marker position to the results once the geocoding service request has resolved
-                markers[geoCodeArray[asyncGeoCodeIndex]].position = results[0].geometry.location;
-                //Put marker back on the map at the new location
-                markers[geoCodeArray[asyncGeoCodeIndex]].setMap(map);
-                //change marker color for debugging
-                markers[geoCodeArray[asyncGeoCodeIndex]].setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
-            } else {
-                //If it fails, notify in the console
-                console.log("geoLoopError: " + status + ": " + geoCodeArray[asyncGeoCodeIndex])
-            }
-            //decrement the aynchGeocodeIndex only when the callback function is called
-            asyncGeoCodeIndex--
-        });
+        geocodeAddress(geocoder, markers[geoCodeArray[geoCodeIndex]], address);
+        geoCodeIndex--;
     }
     //If there are at least 10 murals left, recursively call the function after 10 seconds
     if (geoCodeIndex > 10) {
@@ -134,6 +117,26 @@ function geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, iterations) {
             console.log("Geocoding complete")
         }
     }
+}
+
+//geoCode a single marker
+function geocodeAddress(geocoder, marker, address) {
+    geocoder.geocode({'address': address}, function(results, status) {
+    //If it returns a result, modify the data
+    if (status === 'OK') {
+        //Remove marker from old location
+        marker.setMap(null);
+        //Sets marker position to the results once the geocoding service request has resolved
+        marker.position = results[0].geometry.location;
+        //Put marker back on the map at the new location
+        marker.setMap(map);
+        //change marker color for debugging
+        marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+    } else {
+        //If it fails, notify in the console
+        console.log("geoLoopError: " + status + ": " + address)
+    }
+});
 }
 
 //Modifies original data with errors/problems

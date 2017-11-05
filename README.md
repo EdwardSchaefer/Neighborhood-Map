@@ -179,3 +179,6 @@ markers on the right for more information.
 
 	9/26/2017:
 		*Removed a duplicate URL from cleanData.js
+
+	11/05/2017:
+		*Refactored geoCodeLoop into a separate function so it works asynchronously
