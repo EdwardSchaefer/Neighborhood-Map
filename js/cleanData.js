@@ -49,16 +49,6 @@ var cleanDataObject = [ {
   "comment" : "inaccurate lat/long"
 }
 , {
-  "id" : "53",
-  "operation" : "geoCode",
-  "comment" : "inaccurate lat/long"
-}
-, {
-  "id" : "54",
-  "operation" : "geoCode",
-  "comment" : "inaccurate lat/long"
-}
-, {
   "id" : "65",
   "operation" : "geoCode",
   "comment" : "inaccurate lat/long"
@@ -110,16 +100,6 @@ var cleanDataObject = [ {
 }
 , {
   "id" : "100",
-  "operation" : "geoCode",
-  "comment" : "inaccurate lat/long"
-}
-, {
-  "id" : "128",
-  "operation" : "geoCode",
-  "comment" : "inaccurate lat/long"
-}
-, {
-  "id" : "129",
   "operation" : "geoCode",
   "comment" : "inaccurate lat/long"
 }
@@ -202,6 +182,20 @@ var cleanDataObject = [ {
   "operation" : "latLong",
   "latitude" : "39.312241",
   "longitude" : "-76.587912",
+  "comment" : "inaccurate lat/long"
+}
+, {
+  "id" : "53",
+  "operation" : "latLong",
+  "latitude" : "39.298787",
+  "longitude" : "-76.623056",
+  "comment" : "inaccurate lat/long"
+}
+, {
+  "id" : "54",
+  "operation" : "latLong",
+  "latitude" : "39.298609",
+  "longitude" : "-76.622465",
   "comment" : "inaccurate lat/long"
 }
 , {
@@ -392,6 +386,27 @@ var cleanDataObject = [ {
   "latitude" : "39.293493",
   "longitude" : "-76.609985",
   "comment" : "imprecise/overlapping lat/long"
+}
+, {
+  "id" : "128",
+  "operation" : "latLong",
+  "latitude" : "39.327160",
+  "longitude" : "-76.608447",
+  "comment" : "inaccurate lat/long"
+}
+, {
+  "id" : "129",
+  "operation" : "latLong",
+  "latitude" : "39.327440",
+  "longitude" : "-76.608611",
+  "comment" : "inaccurate lat/long"
+}
+, {
+  "id" : "130",
+  "operation" : "latLong",
+  "latitude" : "39.328280",
+  "longitude" : "-76.608440",
+  "comment" : "inaccurate lat/long"
 }
 , {
   "id" : "142",

@@ -187,4 +187,7 @@ markers on the right for more information.
 		*Ordered/removed duplicate geocode requests in cleandata.js
 
 	11/09/2017:
-		Manually lan/long'ed 2 markers that were not geocoding properly
+		Manually lat/long'ed 2 markers that were not geocoding properly
+
+	11/09/2017:
+		Manually lat/long'ed 5 markers that were not geocoding properly
