@@ -182,3 +182,6 @@ markers on the right for more information.
 
 	11/05/2017:
 		*Refactored geoCodeLoop into a separate function so it works asynchronously
+
+	11/09/2017:
+		*Ordered/removed duplicate geocode requests in cleandata.js
