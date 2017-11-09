@@ -1,9 +1,4 @@
 var cleanDataObject = [ {
-  "id" : "21",
-  "operation" : "geoCode",
-  "comment" : "inaccurate lat/long"
-}
-, {
   "id" : "28",
   "operation" : "geoCode",
   "comment" : "inaccurate lat/long"
@@ -70,11 +65,6 @@ var cleanDataObject = [ {
 }
 , {
   "id" : "66",
-  "operation" : "geoCode",
-  "comment" : "inaccurate lat/long"
-}
-, {
-  "id" : "67",
   "operation" : "geoCode",
   "comment" : "inaccurate lat/long"
 }
@@ -201,10 +191,24 @@ var cleanDataObject = [ {
   "comment" : "inaccurate lat/long"
 }
 , {
+  "id" : "21",
+  "operation" : "latLong",
+  "latitude" : "39.280245",
+  "longitude" : "-76.623807",
+  "comment" : "inaccurate lat/long"
+}
+, {
   "id" : "39",
   "operation" : "latLong",
   "latitude" : "39.312241",
   "longitude" : "-76.587912",
+  "comment" : "inaccurate lat/long"
+}
+, {
+  "id" : "67",
+  "operation" : "latLong",
+  "latitude" : "39.283625",
+  "longitude" : "-76.633519",
   "comment" : "inaccurate lat/long"
 }
 , {
