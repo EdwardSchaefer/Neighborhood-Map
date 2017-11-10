@@ -184,3 +184,4 @@ markers on the right for more information.
 		*Added 4 murals to splice in cleanData.js
 		*Added 3 more murals to splice in cleanData.js
 		*README.md, cleanData.js formatting
+		*Added 1 more mural to splice in cleanData.js

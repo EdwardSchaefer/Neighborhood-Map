@@ -104,11 +104,6 @@ var cleanDataObject = [ {
   "comment" : "inaccurate lat/long"
 }
 , {
-  "id" : "136",
-  "operation" : "geoCode",
-  "comment" : "inaccurate lat/long"
-}
-, {
   "id" : "140",
   "operation" : "geoCode",
   "comment" : "inaccurate lat/long"
@@ -581,6 +576,11 @@ var cleanDataObject = [ {
 }
 , {
   "id" : "138",
+  "operation" : "splice",
+  "comment" : "unable to locate on streetview"
+}
+, {
+  "id" : "136",
   "operation" : "splice",
   "comment" : "unable to locate on streetview"
 }
