@@ -79,11 +79,6 @@ var cleanDataObject = [ {
   "comment" : "inaccurate lat/long"
 }
 , {
-  "id" : "79",
-  "operation" : "geoCode",
-  "comment" : "inaccurate lat/long"
-}
-, {
   "id" : "100",
   "operation" : "geoCode",
   "comment" : "inaccurate lat/long"
@@ -508,12 +503,6 @@ var cleanDataObject = [ {
   "comment" : "no image in data"
 }
 , {
-  "id" : "65",
-  "operation" : "streetView",
-  "url" : "",
-  "comment" : "no image in data"
-}
-, {
   "id" : "66",
   "operation" : "streetView",
   "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2820646,-76.6507544&fov=40&heading=310.4730105445622&pitch=-1.7160859844952796&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
@@ -530,12 +519,6 @@ var cleanDataObject = [ {
   "operation" : "streetView",
   "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2864891,-76.5558048&fov=50&heading=52.90557713205161&pitch=1.4611184410888853&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "camera phone"
-}
-, {
-  "id" : "79",
-  "operation" : "streetView",
-  "url" : "",
-  "comment" : "no image in data"
 }
 , {
   "id" : "80",

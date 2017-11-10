@@ -165,19 +165,13 @@ markers on the right for more information.
 
 	9/24/2017:
 		*Added several streetview URL IDs without URLs to cleanData.js
-
-	9/24/2017:
 		*Added several streetview URLs to cleanData.js
 
 	9/26/2017:
 		*Moved code for dealing with image URLs to earlier dataFilter part of 
-		ajax request
-
-	9/26/2017:
+			ajax request
 		*Modified cleanData function to change the URL of murals listed in 
-		cleanData.js
-
-	9/26/2017:
+			cleanData.js
 		*Removed a duplicate URL from cleanData.js
 
 	11/05/2017:
@@ -185,15 +179,8 @@ markers on the right for more information.
 
 	11/09/2017:
 		*Ordered/removed duplicate geocode requests in cleandata.js
-
-	11/09/2017:
-		Manually lat/long'ed 2 markers that were not geocoding properly
-
-	11/09/2017:
-		Manually lat/long'ed 5 markers that were not geocoding properly
-
-	11/09/2017:
-		Added 4 murals to splice in cleanData.js
-
-	11/09/2017:
-		Added 3 more murals to splice in cleanData.js
+		*Manually lat/long'ed 2 markers that were not geocoding properly
+		*Manually lat/long'ed 5 markers that were not geocoding properly
+		*Added 4 murals to splice in cleanData.js
+		*Added 3 more murals to splice in cleanData.js
+		*README.md, cleanData.js formatting
