@@ -185,3 +185,4 @@ markers on the right for more information.
 		*Added 3 more murals to splice in cleanData.js
 		*README.md, cleanData.js formatting
 		*Added 1 more mural to splice in cleanData.js
+		*Added 1 mural to latLong and streetview
