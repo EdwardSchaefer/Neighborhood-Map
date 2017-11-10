@@ -191,3 +191,6 @@ markers on the right for more information.
 
 	11/09/2017:
 		Manually lat/long'ed 5 markers that were not geocoding properly
+
+	11/09/2017:
+		Added 4 murals to splice in cleanData.js

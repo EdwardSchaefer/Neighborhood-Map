@@ -74,27 +74,12 @@ var cleanDataObject = [ {
   "comment" : "inaccurate lat/long"
 }
 , {
-  "id" : "74",
-  "operation" : "geoCode",
-  "comment" : "inaccurate lat/long"
-}
-, {
   "id" : "78",
   "operation" : "geoCode",
   "comment" : "inaccurate lat/long"
 }
 , {
   "id" : "79",
-  "operation" : "geoCode",
-  "comment" : "inaccurate lat/long"
-}
-, {
-  "id" : "83",
-  "operation" : "geoCode",
-  "comment" : "inaccurate lat/long"
-}
-, {
-  "id" : "84",
   "operation" : "geoCode",
   "comment" : "inaccurate lat/long"
 }
@@ -129,17 +114,7 @@ var cleanDataObject = [ {
   "comment" : "inaccurate lat/long"
 }
 , {
-  "id" : "138",
-  "operation" : "geoCode",
-  "comment" : "inaccurate lat/long"
-}
-, {
   "id" : "140",
-  "operation" : "geoCode",
-  "comment" : "inaccurate lat/long"
-}
-, {
-  "id" : "141",
   "operation" : "geoCode",
   "comment" : "inaccurate lat/long"
 }
@@ -581,18 +556,6 @@ var cleanDataObject = [ {
   "comment" : "no image in data"
 }
 , {
-  "id" : "83",
-  "operation" : "streetView",
-  "url" : "",
-  "comment" : "no image in data"
-}
-, {
-  "id" : "84",
-  "operation" : "streetView",
-  "url" : "",
-  "comment" : "no image in data"
-}
-, {
   "id" : "85",
   "operation" : "streetView",
   "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2923444,-76.6168156&fov=30&heading=229.4391396190333&pitch=1.9654443002066273&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
@@ -627,6 +590,26 @@ var cleanDataObject = [ {
   "operation" : "streetView",
   "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2699512,-76.6486962&fov=35&heading=248.56695318259258&pitch=0.5903830626958779&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
   "comment" : "no image in data"
+}
+, {
+  "id" : "141",
+  "operation" : "splice",
+  "comment" : "unable to locate on streeetview"
+}
+, {
+  "id" : "138",
+  "operation" : "splice",
+  "comment" : "unable to locate on streetview"
+}
+, {
+  "id" : "84",
+  "operation" : "splice",
+  "comment" : "unable to locate on streetview"
+}
+, {
+  "id" : "83",
+  "operation" : "splice",
+  "comment" : "unable to locate on streetview"
 }
 , {
   "id" : "74",
