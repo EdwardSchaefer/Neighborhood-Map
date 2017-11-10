@@ -612,9 +612,24 @@ var cleanDataObject = [ {
   "comment" : "unable to locate on streetview"
 }
 , {
+  "id" : "79",
+  "operation" : "splice",
+  "comment" : "unable to locate on streetview"
+}
+, {
   "id" : "74",
   "operation" : "splice",
   "comment" : "duplicate of #13"
+}
+, {
+  "id" : "73",
+  "operation" : "splice",
+  "comment" : "unable to locate on streetview"
+}
+, {
+  "id" : "63",
+  "operation" : "splice",
+  "comment" : "unable to locate on streetview"
 }
 , {
   "id" : "18",

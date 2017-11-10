@@ -194,3 +194,6 @@ markers on the right for more information.
 
 	11/09/2017:
 		Added 4 murals to splice in cleanData.js
+
+	11/09/2017:
+		Added 3 more murals to splice in cleanData.js
