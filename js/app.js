@@ -111,7 +111,7 @@ function geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, iterations) {
     } else if (geoCodeIndex < 10) {
         if (geoCodeIndex > 0) {
             setTimeout(function() {
-                geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, geoCodeIndex);
+                geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, geoCodeIndex + 1);
             }, 10000)
         } else if (geoCodeIndex <= 0) {
             console.log("Geocoding complete")

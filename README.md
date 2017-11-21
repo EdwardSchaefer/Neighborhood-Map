@@ -188,3 +188,6 @@ markers on the right for more information.
 		*Added 1 mural to latLong and streetview
 		*Added 3 murals to splice in cleanData.js
 		*Added 1 splice and 2 streetviews to cleanData.js
+
+	11/21/2017:
+		*Added 1 more iteration to the last geocode call to accomodate 1-off error
