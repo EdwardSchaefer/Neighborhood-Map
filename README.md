@@ -192,3 +192,7 @@ markers on the right for more information.
 	11/21/2017:
 		*Added 1 more iteration to the last geocode call to accomodate 1-off error
 		*Added 2 murals and removed 1 mural from geocode in cleanData.js
+
+	11/22/2017:
+		*Moved geoCodeIndex decriment to top of geoCodeLoop function to fix
+			1-off error, removed previous offsets from arguments

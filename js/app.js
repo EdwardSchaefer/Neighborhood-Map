@@ -93,6 +93,7 @@ function geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, iterations) {
     //Assign a parallel variable to work with asynchronously
     var asyncGeoCodeIndex = geoCodeIndex;
     for (i = 0; i < iterations; i++) {
+        geoCodeIndex--;
         //Find the mural ID in the geoCodeArray by selecting it by it's index
         var muralID = geoCodeArray[geoCodeIndex];
         //decriment geoCodeIndex to count it as a pass and to go to the next mural in the next iteration
@@ -100,7 +101,6 @@ function geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, iterations) {
         var address = data[muralID].location + ', Baltimore MD'
         //Geocode with Google maps API geocoding service
         geocodeAddress(geocoder, markers[geoCodeArray[geoCodeIndex]], address);
-        geoCodeIndex--;
     }
     //If there are at least 10 murals left, recursively call the function after 10 seconds
     if (geoCodeIndex > 10) {
@@ -111,7 +111,7 @@ function geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, iterations) {
     } else if (geoCodeIndex < 10) {
         if (geoCodeIndex > 0) {
             setTimeout(function() {
-                geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, geoCodeIndex + 1);
+                geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, geoCodeIndex);
             }, 10000)
         } else if (geoCodeIndex <= 0) {
             console.log("Geocoding complete")
@@ -239,7 +239,7 @@ function initMap() {
             markers.push(marker);
         }
         //
-        geoCodeIndex = geoCodeArray.length - 1;
+        geoCodeIndex = geoCodeArray.length;
         geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, 10);
         //If the data isn't retrieved from the server, send the error message to the KO observable
     }).fail(function() {
