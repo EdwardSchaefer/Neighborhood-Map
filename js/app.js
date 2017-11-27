@@ -238,7 +238,19 @@ function initMap() {
         }
         //
         geoCodeIndex = geoCodeArray.length;
-        geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, 10);
+        //If there are at least 10 murals to geocode, call the first 10 murals
+        if (geoCodeIndex > 10) {
+            geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, 10);
+        }
+        //If there are less than 10 murals to code, either code the murals or don't call the function
+        else if (geoCodeIndex < 10) {
+            if (geoCodeIndex > 0) {
+                geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, geoCodeIndex);
+            }
+            else if (geoCodeIndex <= 0) {
+                console.log("Nothing to geocode")
+            }
+        }
         //If the data isn't retrieved from the server, send the error message to the KO observable
     }).fail(function() {
         viewModel.ajaxFail('Failed to retrieve data via API');

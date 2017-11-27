@@ -199,3 +199,4 @@ markers on the right for more information.
 
 	11/27/2017L
 		*Removed unused variable asyncGeoCodeIndex
+		*Set conditions for initial geoCodeLoop call to account for less than 10 murals
