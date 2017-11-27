@@ -196,3 +196,6 @@ markers on the right for more information.
 	11/22/2017:
 		*Moved geoCodeIndex decriment to top of geoCodeLoop function to fix
 			1-off error, removed previous offsets from arguments
+
+	11/27/2017L
+		*Removed unused variable asyncGeoCodeIndex

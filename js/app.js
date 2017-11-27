@@ -90,8 +90,6 @@ function checkDuplicateLats(data) {
 //iterations is the number of times to execute the loop when the function is called once
 
 function geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, iterations) {
-    //Assign a parallel variable to work with asynchronously
-    var asyncGeoCodeIndex = geoCodeIndex;
     for (i = 0; i < iterations; i++) {
         geoCodeIndex--;
         //Find the mural ID in the geoCodeArray by selecting it by it's index
