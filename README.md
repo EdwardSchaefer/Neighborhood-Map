@@ -206,3 +206,6 @@ markers on the right for more information.
 			geoCodeCache function to retrieve stored results and assign them 
 			to markers 
 		*Moved a mural from streetview to splice in cleanData.js
+		*Added finalTimeOut variable so final geoCodeLoop call only 
+			"recharges" for number of seconds neccessary to not trigger too
+			many requests error

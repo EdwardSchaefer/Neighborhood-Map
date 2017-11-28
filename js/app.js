@@ -108,11 +108,12 @@ function geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, iterations) {
     //If there are less than 10 murals left, either code the remaining murals or don't call the function again
     } else if (geoCodeIndex < 10) {
         if (geoCodeIndex > 0) {
+            var finalTimeOut = geoCodeIndex * 1000;
             setTimeout(function() {
                 geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, geoCodeIndex);
-            }, 10000)
+            }, finalTimeOut);
         } else if (geoCodeIndex <= 0) {
-            console.log("Geocoding complete")
+            console.log("Geocoding complete");
         }
     }
 }
