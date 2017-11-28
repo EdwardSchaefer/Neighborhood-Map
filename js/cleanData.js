@@ -518,12 +518,6 @@ var cleanDataObject = [ {
   "comment" : "camera phone"
 }
 , {
-  "id" : "86",
-  "operation" : "streetView",
-  "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.3124192,-76.6120432&fov=31.201710966942937&heading=121.27716957520579&pitch=5.431888349299172&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
-  "comment" : "no image in data"
-}
-, {
   "id" : "88",
   "operation" : "streetView",
   "url" : "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=39.2885691,-76.6384434&fov=22.16943951139194&heading=218.38005308221108&pitch=7.091862214985582&key=AIzaSyCx71lyXw1WF_HmvorENMpOSUI1nn9irzI",
@@ -566,6 +560,11 @@ var cleanDataObject = [ {
   "id" : "84",
   "operation" : "splice",
   "comment" : "unable to locate on streetview"
+}
+, {
+  "id" : "84",
+  "operation" : "splice",
+  "comment" : "no adequate streetview"
 }
 , {
   "id" : "83",

@@ -205,3 +205,4 @@ markers on the right for more information.
 		*Modified geoCodeAddress to store results as string and added 
 			geoCodeCache function to retrieve stored results and assign them 
 			to markers 
+		*Moved a mural from streetview to splice in cleanData.js
