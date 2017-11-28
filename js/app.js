@@ -98,7 +98,7 @@ function geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, iterations) {
         //Get the address from the data of the corresponding muralID
         var address = data[muralID].location + ', Baltimore MD'
         //Geocode with Google maps API geocoding service
-        geocodeAddress(geocoder, markers[geoCodeArray[geoCodeIndex]], address);
+        geoCodeAddress(geocoder, markers[geoCodeArray[geoCodeIndex]], address, geoCodeArray, geoCodeIndex);
     }
     //If there are at least 10 murals left, recursively call the function after 10 seconds
     if (geoCodeIndex > 10) {
@@ -118,7 +118,7 @@ function geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, iterations) {
 }
 
 //geoCode a single marker
-function geocodeAddress(geocoder, marker, address) {
+function geoCodeAddress(geocoder, marker, address, geoCodeArray, geoCodeIndex) {
     geocoder.geocode({'address': address}, function(results, status) {
     //If it returns a result, modify the data
     if (status === 'OK') {
@@ -130,11 +130,25 @@ function geocodeAddress(geocoder, marker, address) {
         marker.setMap(map);
         //change marker color for debugging
         marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+        //store data locally
+        localStorage.setItem(geoCodeArray[geoCodeIndex], JSON.stringify(results[0].geometry.location));
     } else {
         //If it fails, notify in the console
         console.log("geoLoopError: " + status + ": " + address)
     }
 });
+}
+
+//Set markers for stored lat/longs
+function geoCodeCache(geoCodeArray) {
+    localStorageLength = localStorage.length - 1;
+    for (i = localStorageLength; i >= 0; i--) {
+        var string = localStorage.getItem(String(geoCodeArray[i]));
+        var parsed = JSON.parse(string);
+        markers[geoCodeArray[i]].setPosition(parsed);
+        //Set markers to blue for debugging purposes
+        markers[geoCodeArray[i]].setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
+    };
 }
 
 //Modifies original data with errors/problems
@@ -146,6 +160,7 @@ function cleanData(data) {
         if (cleanDataObject[i].operation == "latLong") {
             data[cleanDataObject[i].id].location_1.latitude = cleanDataObject[i].latitude;
             data[cleanDataObject[i].id].location_1.longitude = cleanDataObject[i].longitude;
+        //set geocode targets to null island
         } else if (cleanDataObject[i].operation == "geoCode") {
             data[cleanDataObject[i].id].location_1.latitude = 0;
             data[cleanDataObject[i].id].location_1.longitude = 0; 
@@ -236,8 +251,10 @@ function initMap() {
             //Add marker to the global markers object
             markers.push(marker);
         }
-        //
-        geoCodeIndex = geoCodeArray.length;
+        //Place any markers with coordinates in the localstorage cache
+        geoCodeCache(geoCodeArray);
+        //Determine the remaining amount of markers
+        geoCodeIndex = geoCodeArray.length - localStorage.length
         //If there are at least 10 murals to geocode, call the first 10 murals
         if (geoCodeIndex > 10) {
             geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, 10);
