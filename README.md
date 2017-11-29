@@ -197,11 +197,11 @@ markers on the right for more information.
 		*Moved geoCodeIndex decriment to top of geoCodeLoop function to fix
 			1-off error, removed previous offsets from arguments
 
-	11/27/2017
+	11/27/2017:
 		*Removed unused variable asyncGeoCodeIndex
 		*Set conditions for initial geoCodeLoop call to account for less than 10 murals
 
-	11/28/2017
+	11/28/2017:
 		*Modified geoCodeAddress to store results as string and added 
 			geoCodeCache function to retrieve stored results and assign them 
 			to markers 
@@ -209,3 +209,6 @@ markers on the right for more information.
 		*Added finalTimeOut variable so final geoCodeLoop call only 
 			"recharges" for number of seconds neccessary to not trigger too
 			many requests error
+
+	11/29/2017:
+		*Enabled splice to remove bad murals and removed debugging features

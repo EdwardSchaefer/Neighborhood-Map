@@ -129,8 +129,6 @@ function geoCodeAddress(geocoder, marker, address, geoCodeArray, geoCodeIndex) {
         marker.position = results[0].geometry.location;
         //Put marker back on the map at the new location
         marker.setMap(map);
-        //change marker color for debugging
-        marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
         //store data locally
         localStorage.setItem(geoCodeArray[geoCodeIndex], JSON.stringify(results[0].geometry.location));
     } else {
@@ -147,8 +145,6 @@ function geoCodeCache(geoCodeArray) {
         var string = localStorage.getItem(String(geoCodeArray[i]));
         var parsed = JSON.parse(string);
         markers[geoCodeArray[i]].setPosition(parsed);
-        //Set markers to blue for debugging purposes
-        markers[geoCodeArray[i]].setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
     };
 }
 
@@ -168,9 +164,7 @@ function cleanData(data) {
         } else if (cleanDataObject[i].operation == "streetView") {
             data[cleanDataObject[i].id].imageURL = cleanDataObject[i].url;
         } else if (cleanDataObject[i].operation == "splice") {
-            //splice disabled for now
-            console.log("splice disabled")
-            //data.splice(cleanDataObject[i].id, 1);
+            data.splice(cleanDataObject[i].id, 1);
         }
     }
 }
