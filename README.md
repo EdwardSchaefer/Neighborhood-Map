@@ -212,3 +212,4 @@ markers on the right for more information.
 
 	11/29/2017:
 		*Enabled splice to remove bad murals and removed debugging features
+		*Several style and formatting changes
