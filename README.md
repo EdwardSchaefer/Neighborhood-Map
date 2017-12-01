@@ -220,3 +220,4 @@ markers on the right for more information.
 		*Replaced deleted whitespace with comments to preserve formatting in
 			index.html
 		*Fixed a wrong ID in cleanData.js
+		*Adjusted CSS rules so thumbnails have padding

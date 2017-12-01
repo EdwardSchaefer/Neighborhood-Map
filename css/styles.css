@@ -6,10 +6,6 @@ body {
 	padding: 0px;
 }
 
-img {
-	width: 100%;
-}
-
 .selected {
 	background-color: #FFD700;
 }
@@ -25,8 +21,6 @@ img {
 	left: 0%;
 	height: 100%;
 	background-color: #FFF2AF;
-	padding-left: 10px;
-	padding-right: 10px;
 	overflow-y: scroll;
 }
 
@@ -47,6 +41,16 @@ img {
 
 #thumbnail {
 	display: inline-block;
+	align-content: center;
+}
+
+#thumbnailInner {
+	vertical-align: text-bottom;
+	width: 96%;
+	padding-left: 2%;
+	padding-top: 2%;
+	padding-right: 2%;
+	padding-bottom: 2%;
 }
 
 #map {

@@ -164,6 +164,7 @@ function cleanData(data) {
         } else if (cleanDataObject[i].operation == "streetView") {
             data[cleanDataObject[i].id].imageURL = cleanDataObject[i].url;
         } else if (cleanDataObject[i].operation == "splice") {
+            console.log("splicing " + data[cleanDataObject[i].id].artistfirstname + " " + data[cleanDataObject[i].id].artistlastname)
             data.splice(cleanDataObject[i].id, 1);
         }
     }
