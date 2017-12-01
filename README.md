@@ -217,3 +217,6 @@ markers on the right for more information.
 	12/1/2017:
 		*Removed whitespace around "thumbnail" nav element in index.html so 
 			2 elements will display per line at 50% width
+		*Replaced deleted whitespace with comments to preserve formatting in
+			index.html
+		*Fixed a wrong ID in cleanData.js
