@@ -213,3 +213,7 @@ markers on the right for more information.
 	11/29/2017:
 		*Enabled splice to remove bad murals and removed debugging features
 		*Several style and formatting changes
+
+	12/1/2017:
+		*Removed whitespace around "thumbnail" nav element in index.html so 
+			2 elements will display per line at 50% width
