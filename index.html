@@ -19,13 +19,16 @@
         </span>
     </nav>
     <nav id="placesList">
-        <nav data-bind="foreach: filtered()"><nav id="place" data-bind="visible: !$parent.albumView(), click: selectMural, css: { selected: viewModel.selectedMural() == $data.id }">
+        <nav data-bind="foreach: filtered()"><!--Corrected layout by removing whitespace with this comment
+         --><nav id="place" data-bind="visible: !$parent.albumView(), click: selectMural, css: { selected: viewModel.selectedMural() == $data.id }">
                 <span data-bind='text: $data.artistfirstname'></span> 
                 <span data-bind='text: $data.artistlastname'></span>, 
                 <span data-bind='text: $data.year'></span>
-            </nav><nav id="thumbnail" class="col-l-6 col-m-6 col-s-12" data-bind="visible: $parent.albumView, click: selectMural, css: { selected: viewModel.selectedMural() == $data.id }">
+            </nav><!--Corrected layout by removing whitespace with this comment
+         --><nav id="thumbnail" class="col-l-6 col-m-6 col-s-12" data-bind="visible: $parent.albumView, click: selectMural, css: { selected: viewModel.selectedMural() == $data.id }">
                 <img data-bind="attr:{src: $data.imageURL}" width="100%"></img>
-            </nav></nav>
+            </nav><!--Corrected layout by removing whitespace with this comment
+     --></nav>
         <nav data-bind='text: $data.ajaxFail'></nav>
     </nav>
 </nav>
