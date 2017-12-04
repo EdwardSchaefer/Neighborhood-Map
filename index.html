@@ -13,9 +13,8 @@
         <nav id="title">Murals of Baltimore</nav>
         <input class="col-s-12" id="places-search" type="search" placeholder="Name/Address Search" data-bind="textInput: query" onkeyup="markerUpdate()">
         <span class="col-s-12">
-            View: 
-            <span data-bind="click: changeToAlbumView(false)">List</span> |
-            <span data-bind="click: changeToAlbumView(true)">Album</span>
+            <span data-bind="click: changeToAlbumView(false), css: { selected: viewModel.albumView() == false }">List View</span>
+            <span data-bind="click: changeToAlbumView(true), css: { selected: viewModel.albumView() == true }">Album View</span>
         </span>
     </nav>
     <nav id="placesList">

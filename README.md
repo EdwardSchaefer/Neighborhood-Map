@@ -221,3 +221,6 @@ markers on the right for more information.
 			index.html
 		*Fixed a wrong ID in cleanData.js
 		*Adjusted CSS rules so thumbnails have padding
+
+	12/4/2017:
+		*Added KO CSS bindings so selected view option is now highlighted similar to murals
