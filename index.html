@@ -8,13 +8,13 @@
 </head>
 <body>
 
-<nav id="sidebar" class="col-l-2 col-s-4">
+<nav id="sidebar" class="col-l-2 col-s-3">
     <nav id="controls">
         <nav id="title">Murals of Baltimore</nav>
         <input id="places-search" type="search" placeholder="Name/Address Search" data-bind="textInput: query" onkeyup="markerUpdate()">
-        <span>
-            <span data-bind="click: changeToAlbumView(false), css: { selected: viewModel.albumView() == false }">List View</span><!--
-         --><span data-bind="click: changeToAlbumView(true), css: { selected: viewModel.albumView() == true }">Album View</span>
+        <span class="viewButtons">
+            <span class="viewButton" data-bind="click: changeToAlbumView(false), css: { selected: viewModel.albumView() == false }">List View</span><!--
+         --><span class="viewButton" data-bind="click: changeToAlbumView(true), css: { selected: viewModel.albumView() == true }">Album View</span>
         </span>
     </nav>
     <nav id="placesList">
@@ -32,7 +32,7 @@
     </nav>
 </nav>
 
-<main id="map" class="col-l-10 col-s-8"></main>
+<main id="map" class="col-l-10 col-s-9"></main>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/lib/knockout-3.4.2.js"></script>

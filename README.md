@@ -224,3 +224,7 @@ markers on the right for more information.
 
 	12/4/2017:
 		*Added KO CSS bindings so selected view option is now highlighted similar to murals
+		*Converted CSS to a single break point
+
+	12/5/2017:
+		*Updated several CSS rules

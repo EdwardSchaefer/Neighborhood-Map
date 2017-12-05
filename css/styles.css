@@ -10,10 +10,25 @@ body {
 	background-color: #FFD700;
 }
 
+.viewButtons {
+	width: 100%;
+}
+
+.viewButton {
+	margin-left:5px;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	display: inline-block;
+}
+
 #title {
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 18px;
 	width: 100%;
+	text-align: center;
+	margin-bottom: 5px;
 }
 
 #sidebar {
@@ -27,6 +42,18 @@ body {
 #controls {
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+
+#places-search {
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	margin-left: 5px;
+	margin-top: 5px;
+	display: block;
+	min-width: 50%;
+	max-width: 100%;
 }
 
 #placesList {
