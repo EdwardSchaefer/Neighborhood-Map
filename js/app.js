@@ -320,3 +320,7 @@ function markerUpdate() {
     }
 }
 
+//updates the markers when the search-box-clear 'x' is clicked
+$('input[type=search]').on('search', function () {
+    markerUpdate();
+});
