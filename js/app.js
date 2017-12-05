@@ -284,9 +284,8 @@ function populateInfoWindow(marker, infowindow) {
         } else {
             imageTag = '';
         }
-        infowindow.setContent('<div>Name: ' + marker.firstname + ' ' + marker.lastname + '<br>' +
-                'Address: ' + marker.address + '<br>' +
-                'Year: ' + marker.year + '<br>'+ imageTag);
+        infowindow.setContent('<div>' + marker.firstname + ' ' + marker.lastname + ', ' +
+                marker.year + '<br>' + marker.address + '<br>' + imageTag);
         //Open the InfoWindow
         infowindow.open(map, marker);
         //Make sure the marker property is cleared if the InfoWindow is closed and list item/marker unhighlighted

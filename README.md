@@ -228,4 +228,5 @@ markers on the right for more information.
 
 	12/5/2017:
 		*Updated several CSS rules
-		*Removed mural ID from displaying in info window
+		*Removed mural ID from displaying in info window\
+		*Reformatted infowindow display
