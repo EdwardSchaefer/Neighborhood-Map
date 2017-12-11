@@ -232,3 +232,8 @@ markers on the right for more information.
 		*Reformatted infowindow display
 		*Added jQuery function which updates the markers when the 
 			search-box-clear 'x' is clicked
+
+	12/10/2017:
+		*Replaced setting ungeocoded locations to "null island" and added 
+			"toBeGeocoded" property which is set to true for ungeocoded 
+			locations

@@ -22,9 +22,12 @@ var AppViewModel = function() {
         return ko.utils.arrayFilter(self.locations(), function(location){
             //Returns a value only if a matching value is found in at least 1 attribute
             //(-1 is returned if there is none)
-            return (location.artistlastname.toLowerCase().indexOf(self.query().toLowerCase()) >= 0 ||
-                location.artistfirstname.toLowerCase().indexOf(self.query().toLowerCase()) >= 0 ||
-                location.location.toLowerCase().indexOf(self.query().toLowerCase()) >= 0);
+            return (location.toBeGeocoded != true &&
+                (
+                    location.artistlastname.toLowerCase().indexOf(self.query().toLowerCase()) >= 0 ||
+                    location.artistfirstname.toLowerCase().indexOf(self.query().toLowerCase()) >= 0 ||
+                    location.location.toLowerCase().indexOf(self.query().toLowerCase()) >= 0)
+                );
         });
     });
     //The ID of the mural in question, uesd so the clicked list mural matches the clicked marker and vice versa
@@ -34,7 +37,7 @@ var AppViewModel = function() {
     //Photo album view if true, list view if false
     self.albumView = ko.observable(false);
     //Function to change self.albumView
-    changeToAlbumView = function(choice){
+    self.changeToAlbumView = function(choice){
         self.albumView(choice)
     };
 };
@@ -123,6 +126,8 @@ function geoCodeAddress(geocoder, marker, address, geoCodeArray, geoCodeIndex) {
     geocoder.geocode({'address': address}, function(results, status) {
     //If it returns a result, modify the data
     if (status === 'OK') {
+        //change state of toBeGeocoded
+        viewModel.locations()[geoCodeArray[geoCodeIndex]].toBeGeocoded = false;
         //Remove marker from old location
         marker.setMap(null);
         //Sets marker position to the results once the geocoding service request has resolved
@@ -145,6 +150,7 @@ function geoCodeCache(geoCodeArray) {
         var string = localStorage.getItem(String(geoCodeArray[i]));
         var parsed = JSON.parse(string);
         markers[geoCodeArray[i]].setPosition(parsed);
+        viewModel.locations()[geoCodeArray[i]].toBeGeocoded = false;
     };
 }
 
@@ -157,10 +163,8 @@ function cleanData(data) {
         if (cleanDataObject[i].operation == "latLong") {
             data[cleanDataObject[i].id].location_1.latitude = cleanDataObject[i].latitude;
             data[cleanDataObject[i].id].location_1.longitude = cleanDataObject[i].longitude;
-        //set geocode targets to null island
         } else if (cleanDataObject[i].operation == "geoCode") {
-            data[cleanDataObject[i].id].location_1.latitude = 0;
-            data[cleanDataObject[i].id].location_1.longitude = 0; 
+            data[cleanDataObject[i].id].toBeGeocoded = true;
         } else if (cleanDataObject[i].operation == "streetView") {
             data[cleanDataObject[i].id].imageURL = cleanDataObject[i].url;
         } else if (cleanDataObject[i].operation == "splice") {
@@ -195,6 +199,7 @@ function initMap() {
                 data[i].artistlastname = data[i].artistlastname ? data[i].artistlastname : "";
                 data[i].year = data[i].year ? data[i].year : "";
                 data[i].location = data[i].location ? data[i].location : "";
+                data[i].location.toBeGeocoded = data[i].location.toBeGeocoded ? data[i].location.toBeGeocoded : false;
                 //See if the mural has an image, if not, set path to img/flag.svg
                 if (!data[i].image){
                     data[i].image = {"file_id": "", "filename": ""};
@@ -221,7 +226,7 @@ function initMap() {
             //Add a unique ID for each object in the array
             data[i].id = i;
             //if the mural has a bad lat/long, retrieve new lat/long with api
-            if (data[i].location_1.latitude == 0) {
+            if (data[i].toBeGeocoded === true) {
                 geoCodeArray.push(i);
             }
             //Create a new marker object and add the data to it
