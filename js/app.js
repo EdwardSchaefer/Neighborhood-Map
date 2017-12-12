@@ -103,6 +103,8 @@ function geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, iterations) {
         //Geocode with Google maps API geocoding service
         geoCodeAddress(geocoder, markers[geoCodeArray[geoCodeIndex]], address, geoCodeArray, geoCodeIndex);
     }
+    //check if .toBeGeocoded has changed and update view if it has
+    viewModel.locations.valueHasMutated();
     //If there are at least 10 murals left, recursively call the function after 10 seconds
     if (geoCodeIndex > 10) {
         setTimeout(function() {
@@ -116,7 +118,11 @@ function geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, iterations) {
                 geoCodeLoop(geoCodeArray, geocoder, data, geoCodeIndex, geoCodeIndex);
             }, finalTimeOut);
         } else if (geoCodeIndex <= 0) {
-            console.log("Geocoding complete");
+            //check if .toBeGeocoded has changed and update view if it has after waiting 1 second so geocode calls return 
+            setTimeout(function() {
+                viewModel.locations.valueHasMutated();
+                console.log("Geocoding complete");
+            }, 1000);
         }
     }
 }
@@ -152,6 +158,8 @@ function geoCodeCache(geoCodeArray) {
         markers[geoCodeArray[i]].setPosition(parsed);
         viewModel.locations()[geoCodeArray[i]].toBeGeocoded = false;
     };
+    //check if .toBeGeocoded has changed and update view if it has
+    viewModel.locations.valueHasMutated();
 }
 
 //Modifies original data with errors/problems

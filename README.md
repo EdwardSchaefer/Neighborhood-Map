@@ -237,3 +237,6 @@ markers on the right for more information.
 		*Replaced setting ungeocoded locations to "null island" and added 
 			"toBeGeocoded" property which is set to true for ungeocoded 
 			locations
+
+	12/11/2017:
+		*Added code to check if .toBeGeocoded changed and update view if it has
