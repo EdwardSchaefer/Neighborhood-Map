@@ -1,4 +1,4 @@
-This application uses Google Maps API and Knockout Javascript framwork to explore 
+This application uses Google Maps API and Knockout Javascript framework to explore 
 murals around Baltimore City, Maryland. The Socrata Open Data API is used to 
 retrieve data about murals around Baltimore from Open Baltimore, an open 
 database with information about Baltimore. This data is retrieved 
